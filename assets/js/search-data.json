@@ -456,7 +456,7 @@
   },"65": {
     "doc": "Frequently Asked Questions",
     "title": "Frequently Asked Questions",
-    "content": ". | How to understand the goodness of fit of a model? . | Hourly calibration | Monthly calibration | . | What is Remote Audit Assistance? | Calibrated Baseline Model vs. In Operation Normalized Baseline Model vs. Energy Code Baseline Model | How to exclude outliers in my meter data? | . ",
+    "content": ". | How to understand the goodness of fit of a model? . | Hourly calibration | Monthly calibration | . | What is Remote Audit Assistance? | Understanding Performance Scoring . | Calibrated Baseline Model | Weather-Normalized Model | Two Additional Models: Two Ways to Look at Performance . | Operation Normalized Baseline Model | Energy Code Baseline Model | . | Calculating Energy Savings | . | How to exclude outliers in my meter data? | . ",
     "url": "/docs/faq/",
     
     "relUrl": "/docs/faq/"
@@ -476,11 +476,11 @@
     "relUrl": "/docs/faq/#what-is-remote-audit-assistance"
   },"68": {
     "doc": "Frequently Asked Questions",
-    "title": "Calibrated Baseline Model vs. In Operation Normalized Baseline Model vs. Energy Code Baseline Model",
-    "content": "A model is calibrated with actual weather data representing the same time span as the measured interval data period. After the calibration, it is weather-normalized by replacing the actual weather data with normal weather data (TMY3: the typical meteorological year), which is called a Calibrated Baseline Model. The weather-normalized model is utilized throughout the whole energy analysis. Then two more types of models are created based on the Calibrated Baseline Model for the calculation of In Operation and Asset Scores: an Operation Normalized Baseline Model and an Energy Code Baseline Model. Calibrated Baseline Model is first created for all calculations using hourly interval data. Costs Savings After Retrofit is calculated from the difference in annual energy consumption from the post-retrofit model that is adjusted for the proposed ECMs (Energy Conservation Measures). Operation Normalized Baseline Model is used for the In Operation Score that needs an operation-based calculation of predicted energy savings. The Calibrated Baseline Mode’s calibrated schedules are replaced to reflect standardized operating conditions (the typical ASHRAE schedules) according to the building types. The difference between EUIs between the Calibrated Baseline Model and Operation Normalized Baseline Model is scored using the formula: In Operation Score = 100 - ( 50 x Calibrated Baseline EUI / Operation Normalised Baseline EUI) . Energy Code Baseline Model is simulated for the Building Asset Score that requires an asset-based calculation of predicted energy savings. The Calibrated Baseline Model’s input parameters are modified with asset properties required by the selected energy code . The difference in EUIs of the Calibrated Baseline and Energy Code Baseline Models is scored using the below formula: http://docs.inversenergy.com:8080/link/9#bkmrk-building-asset-score . Building Asset Score = 100 - ( 50 x Calibrated Baseline EUI / Energy Code Baseline EUI) . ",
-    "url": "/docs/faq/#calibrated-baseline-model-vs-in-operation-normalized-baseline-model-vs-energy-code-baseline-model",
+    "title": "Understanding Performance Scoring",
+    "content": "Calibrated Baseline Model . | What it is: A model based on actual weather data and measured energy usage. | How it’s used: As a starting point for all other calculations. | . Weather-Normalized Model . | What it is: The Calibrated Baseline Model adjusted with typical weather data (TMY3). | How it’s used: For consistent energy analysis across different time periods. | . Two Additional Models: Two Ways to Look at Performance . | The “How You’re Operating” Model (Operation Normalized Baseline) Imagine if everyone in every building followed the same schedule and behaved the same way. That’s what this model does. It takes your building and applies standard operating schedules. This helps us see how much of your energy use is due to how the building is being operated, versus the building itself. | The “How Your Building is Built” Model (Energy Code Baseline) This one’s like asking, “What if your building was built to just meet current energy codes?” It helps us understand how the physical aspects of your building – its “bones” – contribute to its energy performance. | . Both scores work on a scale where 100 is perfect (using no energy) and 50 means you’re using exactly as much as the baseline. The higher your score, the better you’re doing! . Operation Normalized Baseline Model . | Purpose: Calculates the “In Operation Score” | How it’s created: Uses standardized schedules (ASHRAE) instead of actual operating conditions | Formula: In Operation Score = 100 - (50 x Calibrated Baseline EUI / Operation Normalized Baseline EUI) . | . Energy Code Baseline Model . | Purpose: Calculates the “Building Asset Score” | How it’s created: Modifies input parameters to meet selected energy code requirements | Formula: Asset Score = 100 - (50 x Calibrated Baseline EUI / Energy Code Baseline EUI) . | . Calculating Energy Savings . For retrofit projects: Compare post-retrofit model (with proposed Energy Conservation Measures) to the Calibrated Baseline Model. graph TD A[\"Weather-Normalized Calibrated Baseline\"] A --&gt;|\"In Operation Score\"| C[\"Operation Normalized Baseline\"] A --&gt;|\"Asset Score\"| D[\"Energy Code Baseline\"] subgraph \"Benchmarking Score\" C D end style A fill:#ff9999,stroke:#333,stroke-width:2px style C fill:#f0f0f0,stroke:#333,stroke-width:2px style D fill:#f0f0f0,stroke:#333,stroke-width:2px . Simplified Explanation: . | We start with a model based on real data (Calibrated Baseline). | We adjust this model for typical weather (Weather-Normalized). | We create two more models from the model: . | One that uses standard operating schedules (for In Operation Score) | One that meets energy code requirements (for Building Asset Score) | . | We compare these models to see how well the building is performing: . | Against typical operations | Against energy code standards | . | The formulas give higher scores for buildings that use less energy compared to the baseline. | . ",
+    "url": "/docs/faq/#understanding-performance-scoring",
     
-    "relUrl": "/docs/faq/#calibrated-baseline-model-vs-in-operation-normalized-baseline-model-vs-energy-code-baseline-model"
+    "relUrl": "/docs/faq/#understanding-performance-scoring"
   },"69": {
     "doc": "Frequently Asked Questions",
     "title": "How to exclude outliers in my meter data?",
@@ -566,251 +566,223 @@
     
     "relUrl": "/getting-started/#good-to-have"
   },"81": {
-    "doc": "Incentive Programs",
-    "title": "Incentive Programs",
-    "content": " ",
-    "url": "/incentive-programs",
-    
-    "relUrl": "/incentive-programs"
-  },"82": {
-    "doc": "Incentive Programs",
-    "title": "Table of contents",
-    "content": ". | Full Building Tune-up - Pepco, Delmarva, and BGE . | Application Processes . | Pepco and Delmarva | BGE | . | . | . ",
-    "url": "/incentive-programs#table-of-contents",
-    
-    "relUrl": "/incentive-programs#table-of-contents"
-  },"83": {
-    "doc": "Incentive Programs",
-    "title": "Full Building Tune-up - Pepco, Delmarva, and BGE",
-    "content": ". InverseAudit has been approved for use by ICF for Phase I of Full Building Tune-up. Service providers registered with the program can use the InverseAudit report to submit a Building Tune-Up application to meet the Phase I requirements. If you have questions, please contact help@inversenergy.com. | Programs Accepted BGE, Pepco, and Delmarva | Incentive Track Full Building Tune Up | . ",
-    "url": "/incentive-programs#full-building-tune-up---pepco-delmarva-and-bge",
-    
-    "relUrl": "/incentive-programs#full-building-tune-up---pepco-delmarva-and-bge"
-  },"84": {
-    "doc": "Incentive Programs",
-    "title": "Application Processes",
-    "content": "Pepco and Delmarva . | Phase 1 Submit Online Application with InversEnergy Audit Report to fulfill project pre-approval requirements. Receive the pre-approval letter. | Phase 2 ASHRAE Level 2 audit and submit audit report with identified EEMs* for Phase 3. Get paid $0.15 per square foot of conditioned space. | Phase 3 Implement low cost / no cost EEMs. Submit implementation report. Get paid $0.10 per square foot of conditioned space. *Any EEM that is not a low cost / no cost, MRO type measure can receive a separate incentive through one of the other programs. | . BGE . | Phase 1 Submit Online Application with InversEnergy Audit Report to fulfill project pre-approval requirements. Receive the pre-approval letter. | Phase 2 ASHRAE Level 2 audit and submit audit report with identified EEMs* for Phase 3. | Phase 3 Implement low cost / no cost EEMs. Submit implementation report. Get paid 75% of project cost up to $25,000 for Small Building Tune Up or $50,000 for Large Building Tune Up. If your project requires trend data collection, there is an additional incentive of up to $5000 to defray the cost of the trend data collection. *Any EEM that is not a low cost / no cost, MRO type measure can receive a separate incentive through one of the other programs. | . ",
-    "url": "/incentive-programs#application-processes",
-    
-    "relUrl": "/incentive-programs#application-processes"
-  },"85": {
     "doc": "Markdown kitchen sink",
     "title": "Header 1",
     "content": "This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere. ",
     "url": "/docs/index-test/#header-1",
     
     "relUrl": "/docs/index-test/#header-1"
-  },"86": {
+  },"82": {
     "doc": "Markdown kitchen sink",
     "title": "Header 2",
     "content": "This is a blockquote following a header. When something is important enough, you do it even if the odds are not in your favor. Header 3 . // Javascript code with syntax highlighting. var fun = function lang(l) { dateformat.i18n = require('./lang/' + l) return true; } . # Ruby code with syntax highlighting GitHubPages::Dependencies.gems.each do |gem, version| s.add_dependency(gem, \"= #{version}\") end . Header 4 with code not transformed . | This is an unordered list following a header. | This is an unordered list following a header. | This is an unordered list following a header. | . Header 5 . | This is an ordered list following a header. | This is an ordered list following a header. | This is an ordered list following a header. | . Header 6 . This is a very long link which wraps and therefore doesn’t overflow even when it comes at the beginning of the line. | This is a very long link which wraps and therefore doesn’t overflow the line when used first in an item in a list. | . | head1 | head two | three | . | ok | good swedish fish | nice | . | out of stock | good and plenty | nice | . | ok | good oreos | hmm | . | ok | good zoute drop | yumm | . There’s a horizontal rule below this. Here is an unordered list: . | Item foo | Item bar | Item baz | Item zip | . And an ordered list: . | Item one | Item two | Item three | Item four | . And an ordered list, continued: . | Item one | Item two | . Some text . | Item three | Item four | . And an ordered list starting from 42: . | Item 42 | Item 43 | Item 44 | . And a nested list: . | level 1 item . | level 2 item | level 2 item . | level 3 item | level 3 item | . | . | level 1 item . | level 2 item | level 2 item | level 2 item | . | level 1 item . | level 2 item | level 2 item | . | level 1 item | . Nesting an ol in ul in an ol . | level 1 item (ul) . | level 2 item (ol) | level 2 item (ol) . | level 3 item (ul) | level 3 item (ul) | . | . | level 1 item (ul) . | level 2 item (ol) | level 2 item (ol) . | level 3 item (ul) | level 3 item (ul) | . | level 4 item (ol) | level 4 item (ol) . | level 3 item (ul) | level 3 item (ul) | . | . | level 1 item (ul) | . And a task list . | Hello, this is a TODO item | Hello, this is another TODO item | Goodbye, this item is done | . Nesting task lists . | level 1 item (task) . | level 2 item (task) | level 2 item (task) | . | level 1 item (task) | level 1 item (task) | . Nesting a ul in a task list . | level 1 item (task) . | level 2 item (ul) | level 2 item (ul) | . | level 1 item (task) | level 1 item (task) | . Nesting a task list in a ul . | level 1 item (ul) . | level 2 item (task) | level 2 item (task) | . | level 1 item (ul) | level 1 item (ul) | . Small image . Large image . “Wroclaw University Library digitizing rare archival texts” by j_cadmus is marked with CC BY 2.0. Labels . I’m a label . blue . green . purple . yellow . red . bold . italic . bold + italic . Definition lists can be used with HTML syntax. Name Godzilla Born 1952 Birthplace Japan Color Green Multiple description terms and values . Term Brief description of Term Longer Term Longer description of Term, possibly more than one line Term First description of Term, possibly more than one line Second description of Term, possibly more than one line . Term1 Term2 Single description of Term1 and Term2, possibly more than one line Term1 Term2 First description of Term1 and Term2, possibly more than one line Second description of Term1 and Term2, possibly more than one line . More code . def dump_args(func): \"This decorator dumps out the arguments passed to a function before calling it\" argnames = func.func_code.co_varnames[:func.func_code.co_argcount] fname = func.func_name def echo_func(*args,**kwargs): print fname, \":\", ', '.join( '%s=%r' % entry for entry in zip(argnames,args) + kwargs.items()) return func(*args, **kwargs) return echo_func @dump_args def f1(a,b,c): print a + b + c f1(1, 2, 3) def precondition(precondition, use_conditions=DEFAULT_ON): return conditions(precondition, None, use_conditions) def postcondition(postcondition, use_conditions=DEFAULT_ON): return conditions(None, postcondition, use_conditions) class conditions(object): __slots__ = ('__precondition', '__postcondition') def __init__(self, pre, post, use_conditions=DEFAULT_ON): if not use_conditions: pre, post = None, None self.__precondition = pre self.__postcondition = post . Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this. Mermaid Diagrams . The following code is displayed as a diagram only when a mermaid key supplied in _config.yml. graph TD; A--&gt;B; A--&gt;C; B--&gt;D; C--&gt;D; . Collapsed Section . The following uses the &lt;details&gt; tag to create a collapsed section. Shopping list (click me!) This is content inside a &lt;details&gt; dropdown. | Apples | Oranges | Milk | . ",
     "url": "/docs/index-test/#header-2",
     
     "relUrl": "/docs/index-test/#header-2"
-  },"87": {
+  },"83": {
     "doc": "Markdown kitchen sink",
     "title": "Markdown kitchen sink",
     "content": "Preview dark color scheme . Text can be bold, italic, or strikethrough. Link to another page. There should be whitespace between paragraphs. There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project. ",
     "url": "/docs/index-test/",
     
     "relUrl": "/docs/index-test/"
-  },"88": {
+  },"84": {
     "doc": "Introduction",
     "title": "What is InverseAudit?",
     "content": "InverseAudit is a comprehensive energy auditing platform for commercial buildings. Build accurate calibrated models using monthly or interval data instantly and avoid efforts that requires in manual modeling and calibration. ",
     "url": "/#what-is-inverseaudit",
     
     "relUrl": "/#what-is-inverseaudit"
-  },"89": {
+  },"85": {
     "doc": "Introduction",
     "title": "Try InverseAudit now",
     "content": "As of Januany 10, 2024, InverseAUDIT officaly support monthly data. ",
     "url": "/#try-inverseaudit-now",
     
     "relUrl": "/#try-inverseaudit-now"
-  },"90": {
+  },"86": {
     "doc": "Introduction",
     "title": "Why a model should be calibrated",
     "content": "Energy modeling is not always accurate. Espeically, it is true for old exsitng buildings. It is important to note that the accuracy of modeling is limited not only by the inherent complexity of buildings, but also by variation in operational factors such as building schedule and occupancy, building system or equipment operating strategies, internal plug loads, and weather.1 If an energy model is not calibrated with utility data, it is not accurate. It means it should be calibrated before calculating energy cost savings. ",
     "url": "/#why-a-model-should-be-calibrated",
     
     "relUrl": "/#why-a-model-should-be-calibrated"
-  },"91": {
+  },"87": {
     "doc": "Introduction",
     "title": "Why should InverseAudit be used?",
     "content": ". | It creates and calibrates a model based on your utility data and historical weather data. This leads to an accurate and representative model of your building. | You can perform an energy audit which is equvalient to ASHRAE ennergy audit level II. | . ",
     "url": "/#why-should-inverseaudit-be-used",
     
     "relUrl": "/#why-should-inverseaudit-be-used"
-  },"92": {
+  },"88": {
     "doc": "Introduction",
     "title": "The methdologies and standards used in InverseAudit",
     "content": "We have incorporated with many industry standards such as . | ASHRAE Standard 90.1 | ASHRAE Standard 211 | IPMVP (International Performance Measurement and Verification Protocol) | Our propriotery methods | . More specifically, InverseAudit can be used for: . | ASHRAE Level 2 energy audit | Building Energy Ordinance programs | LEED-EBOM: Operations and Maintenance (O+M) | . | How Accurate is Energy Modeling in the Market. &#8617; . | . ",
     "url": "/#the-methdologies-and-standards-used-in-inverseaudit",
     
     "relUrl": "/#the-methdologies-and-standards-used-in-inverseaudit"
-  },"93": {
+  },"89": {
     "doc": "Introduction",
     "title": "Introduction",
     "content": " ",
     "url": "/",
     
     "relUrl": "/"
-  },"94": {
+  },"90": {
     "doc": "Minimal layout test",
     "title": "Minimal layout test",
     "content": "Return to main website. This page demonstrates the packaged minimal layout, which does not render the sidebar or header. It can be used for standalone pages. It is also an example of using the new modular site components to define custom layouts; see “Custom layouts and includes” in the customization docs for more information. ",
     "url": "/docs/minimal-test/",
     
     "relUrl": "/docs/minimal-test/"
-  },"95": {
+  },"91": {
     "doc": "Performing an Energy Audit",
     "title": "Performing an Energy Audit",
     "content": " ",
     "url": "/docs/energy-auditing/performing-energy-audit/",
     
     "relUrl": "/docs/energy-auditing/performing-energy-audit/"
-  },"96": {
+  },"92": {
     "doc": "Performing an Energy Audit",
     "title": "Table of contents",
     "content": ". | Measures in ECM Explorer . | Envelope . | Roof | Exterior Walls | Window U-value | Window SC-value | Window Film | Infiltration | . | Space Use . | Interior Lighting | Occupancy Control | Plug Loads | Plug Loads Control | Base Process Loads | Various Process Loads | . | Operations . | HVAC Startup | HVAC Shutdown | Days of Operation | # of Floor(s) Conditioned in 24/7 | # of Floor(s) Unlit | # of Floor(s) Unconditioned | # of Basement(s) Unconditioned | Cooling Setpoint Temperature | Heating Setpoint Temperature | Cooling Setback Temperature | Heating Setback Temperature | DOAS Scheduling | . | Air-side . | DX Cooling | Heat Pump Heating | Furance Heating | DX Compressor | Cooling Supply Air | Heating Supply Air | Zone Fan Operation | Indoor Fan Operation | Interior Fan Speed | Min Fan Operation | Min Airflow Ratio | Air-side Economizer | Supply Air Temperature Reset | Demand Control Ventilation | Motorized Damper | Cooling Capacity Optimization | Heating Capacity Optimization | Minimum Outside Air | Exhaust Air | Heat Source to be changed | . | Water-side 1 . | Chiller Type | Chiller Condenser Type | Chiller Performance | Chiller Size | Water-side Economizer | Cooling Tower Fan Control | Cooling Tower Pump Head | Chilled Water Loop Configuration | Primary CHW Pump Head | Secondary CHW Pump Head | Chilled Water Temperature | Chilled Water Temperature Control | . | Water-side 2 . | Boiler Type | Boiler Performance | Boiler Size | Hot Water Pump Head | HW Pump Speed Control | Hot Water Temperature | HW Snap Control | HW Snap Temperature | Hot Water Temperature Reset | . | Solar PV . | Solar PV capacity | Mount Tilt | . | . | . ",
     "url": "/docs/energy-auditing/performing-energy-audit/#table-of-contents",
     
     "relUrl": "/docs/energy-auditing/performing-energy-audit/#table-of-contents"
-  },"97": {
+  },"93": {
     "doc": "Performing an Energy Audit",
     "title": "Measures in ECM Explorer",
     "content": " ",
     "url": "/docs/energy-auditing/performing-energy-audit/#measures-in-ecm-explorer",
     
     "relUrl": "/docs/energy-auditing/performing-energy-audit/#measures-in-ecm-explorer"
-  },"98": {
+  },"94": {
     "doc": "Performing an Energy Audit",
     "title": "Envelope",
     "content": "Roof . Exterior Walls . Window U-value . Window SC-value . Window Film . Infiltration . ",
     "url": "/docs/energy-auditing/performing-energy-audit/#envelope",
     
     "relUrl": "/docs/energy-auditing/performing-energy-audit/#envelope"
-  },"99": {
+  },"95": {
     "doc": "Performing an Energy Audit",
     "title": "Space Use",
     "content": "Interior Lighting . Occupancy Control . Plug Loads . Plug Loads Control . Base Process Loads . Various Process Loads . ",
     "url": "/docs/energy-auditing/performing-energy-audit/#space-use",
     
     "relUrl": "/docs/energy-auditing/performing-energy-audit/#space-use"
-  },"100": {
+  },"96": {
     "doc": "Performing an Energy Audit",
     "title": "Operations",
     "content": "HVAC Startup . HVAC Shutdown . Days of Operation . # of Floor(s) Conditioned in 24/7 . # of Floor(s) Unlit . # of Floor(s) Unconditioned . # of Basement(s) Unconditioned . Cooling Setpoint Temperature . Heating Setpoint Temperature . Cooling Setback Temperature . Heating Setback Temperature . DOAS Scheduling . ",
     "url": "/docs/energy-auditing/performing-energy-audit/#operations",
     
     "relUrl": "/docs/energy-auditing/performing-energy-audit/#operations"
-  },"101": {
+  },"97": {
     "doc": "Performing an Energy Audit",
     "title": "Air-side",
     "content": "DX Cooling . Heat Pump Heating . Furance Heating . DX Compressor . Cooling Supply Air . Heating Supply Air . Zone Fan Operation . Indoor Fan Operation . Interior Fan Speed . Min Fan Operation . Min Airflow Ratio . Air-side Economizer . Supply Air Temperature Reset . Demand Control Ventilation . Motorized Damper . Cooling Capacity Optimization . Heating Capacity Optimization . Minimum Outside Air . Exhaust Air . Heat Source to be changed . ",
     "url": "/docs/energy-auditing/performing-energy-audit/#air-side",
     
     "relUrl": "/docs/energy-auditing/performing-energy-audit/#air-side"
-  },"102": {
+  },"98": {
     "doc": "Performing an Energy Audit",
     "title": "Water-side 1",
     "content": "Chiller Type . Chiller Condenser Type . Chiller Performance . Chiller Size . Water-side Economizer . Cooling Tower Fan Control . Cooling Tower Pump Head . Chilled Water Loop Configuration . Primary CHW Pump Head . Secondary CHW Pump Head . Chilled Water Temperature . Chilled Water Temperature Control . ",
     "url": "/docs/energy-auditing/performing-energy-audit/#water-side-1",
     
     "relUrl": "/docs/energy-auditing/performing-energy-audit/#water-side-1"
-  },"103": {
+  },"99": {
     "doc": "Performing an Energy Audit",
     "title": "Water-side 2",
     "content": "Boiler Type . Boiler Performance . Boiler Size . Hot Water Pump Head . HW Pump Speed Control . Hot Water Temperature . HW Snap Control . HW Snap Temperature . Hot Water Temperature Reset . ",
     "url": "/docs/energy-auditing/performing-energy-audit/#water-side-2",
     
     "relUrl": "/docs/energy-auditing/performing-energy-audit/#water-side-2"
-  },"104": {
+  },"100": {
     "doc": "Performing an Energy Audit",
     "title": "Solar PV",
     "content": "Solar PV capacity . Mount Tilt . ",
     "url": "/docs/energy-auditing/performing-energy-audit/#solar-pv",
     
     "relUrl": "/docs/energy-auditing/performing-energy-audit/#solar-pv"
-  },"105": {
+  },"101": {
     "doc": "Subscription",
     "title": "Subscription",
     "content": ". | Canceling a subscription | . ",
     "url": "/docs/subscription/",
     
     "relUrl": "/docs/subscription/"
-  },"106": {
+  },"102": {
     "doc": "Subscription",
     "title": "Canceling a subscription",
     "content": "Subscriptions on InverseAudit renew automatically unless you unsubscribe. You can cancel your subscription by logging in to the InversEnergy website and going to Baselines on the side menu. When you cancel your subscription at any point during your monthly or annual cycle, your baseline remains active until the end of your billing period. Your past subscriptions will not be refunded. ",
     "url": "/docs/subscription/#canceling-a-subscription",
     
     "relUrl": "/docs/subscription/#canceling-a-subscription"
-  },"107": {
+  },"103": {
     "doc": "Supported Data Formats",
     "title": "Supported Data Formats",
     "content": " ",
     "url": "/supported-data-formats",
     
     "relUrl": "/supported-data-formats"
-  },"108": {
+  },"104": {
     "doc": "Supported Data Formats",
     "title": "Table of contents",
     "content": ". | Electricity . | Understanding kW and kWh in Interval Meter Data . | Definitions | Data Conversion | . | Data Format for InverseAudit . | Green Button Format | CSV (Comma-Separated Value) Format . | Horizontal CSV Format | Vertical CSV Format . | Two-Column Format | Three-Column Format | . | . | . | Data Import Process | Best Practices | . | Natural Gas | Fuel Oil | District Chilled Water | District Steam | . Below is a list of interval data formats supported by InverseAudit. We continuously add new formats. For any questions or issues with data import, please contact our support team. If your meter data file contains more than one year’s worth of data, our system will automatically use the latest one-year period. ",
     "url": "/supported-data-formats#table-of-contents",
     
     "relUrl": "/supported-data-formats#table-of-contents"
-  },"109": {
+  },"105": {
     "doc": "Supported Data Formats",
     "title": "Electricity",
     "content": "Understanding kW and kWh in Interval Meter Data . Interval meter data typically presents energy consumption information in two key metrics: kilowatts (kW) and kilowatt-hours (kWh). Proper interpretation of these metrics is crucial for accurate energy analysis and billing. Definitions . | kW (kilowatt): A measure of power, representing the rate of energy consumption at a given moment. | kWh (kilowatt-hour): A measure of energy, representing the total amount of electricity consumed over a period of time. | . Data Conversion . When converting interval data to hourly figures: . | kW values are averaged to represent the mean power demand. | kWh values are summed to represent the total energy consumption. | . Critical Interpretation . Misinterpreting kW as kWh or vice versa can lead to significant errors in energy calculations: . If 30-minute kW intervals are mistakenly treated as kWh: . | Result: Annual energy consumption would be overestimated by 100%. The annual energy consumption would be calculated as double the actual amount (kWh). | . If 30-minute kWh intervals are mistakenly treated as kW: . | Result: Annual energy consumption would be underestimated by 50%. The estimated annual energy consumption would be 50% lower than the actual amount (kWh). | . These errors, when propagated over extended periods, can result in substantial discrepancies in energy analysis. Data Format for InverseAudit . InverseAudit supports two major data formats: Green Button and CSV. This manual outlines the specifications for each format and how they are handled by the system. Green Button Format . The Green Button is a standardized data format designed for easy and secure access to energy usage data. | Format: Standardized, machine-readable | Purpose: Allows utility customers to access their energy usage data in a consumer-friendly format | Handling: InverseAudit consumes Green Button data without any modification | . CSV (Comma-Separated Value) Format . CSV is a common output format for spreadsheet programs. InverseAudit supports two types of CSV formats and can automatically recognize the type. Horizontal CSV Format . | Structure: Horizontal header shows time, First column shows date | Default Unit: kW | Unit Specification: If needed, include “kWh” or “kW” in the first cell of the first column | File Extension: .csv | . Vertical CSV Format . InverseAudit supports two variations of the vertical format: . Two-Column Format . | Column 1: Date and time combined | Column 2: Electricity usage data | . Three-Column Format . | Column 1: Date | Column 2: Time | Column 3: Electricity usage data | . Data Import Process . InverseAudit automatically detects the format of the imported file (Green Button or CSV). For CSV files, the system determines whether it’s a horizontal or vertical format. The data is then processed according to the identified format. Best Practices . Ensure data consistency within each file For CSV files, maintain a clear structure as outlined above When using the horizontal CSV format, specify the unit (kW or kWh) if it differs from the default . ",
     "url": "/supported-data-formats#electricity",
     
     "relUrl": "/supported-data-formats#electricity"
-  },"110": {
+  },"106": {
     "doc": "Supported Data Formats",
     "title": "Natural Gas",
     "content": "| Company | Reference | Format | Interval | Tested | . | InverseAudit | - | csv (comma-separated values) | 1 Month | Yes | . ",
     "url": "/supported-data-formats#natural-gas",
     
     "relUrl": "/supported-data-formats#natural-gas"
-  },"111": {
+  },"107": {
     "doc": "Supported Data Formats",
     "title": "Fuel Oil",
     "content": "| Company | Reference | Format | Interval | Tested | . | InverseAudit | - | csv (comma-separated values) | 1 Month | Yes | . ",
     "url": "/supported-data-formats#fuel-oil",
     
     "relUrl": "/supported-data-formats#fuel-oil"
-  },"112": {
+  },"108": {
     "doc": "Supported Data Formats",
     "title": "District Chilled Water",
     "content": "| Company | Reference | Format | Interval | Tested | . | InverseAudit | - | csv (comma-separated values) | 60 mins | Yes | . ",
     "url": "/supported-data-formats#district-chilled-water",
     
     "relUrl": "/supported-data-formats#district-chilled-water"
-  },"113": {
+  },"109": {
     "doc": "Supported Data Formats",
     "title": "District Steam",
     "content": "| Company | Reference | Format | Interval | Tested | . | InverseAudit | - | csv (comma-separated values) | 60 mins | Yes | . ",
     "url": "/supported-data-formats#district-steam",
     
     "relUrl": "/supported-data-formats#district-steam"
-  },"114": {
+  },"110": {
     "doc": "Technical Support",
     "title": "Technical Support",
     "content": ". Engineering team engineers@inversenergy.com Technical issues support@inversenergy.com General inquires help@inversenergy.com Incentive programs rebates@inversenergy.com Press press@inversenergy.com Billing issues billing-support@inversenergy.com ",
     "url": "/docs/technical-support/",
     
     "relUrl": "/docs/technical-support/"
-  },"115": {
+  },"111": {
     "doc": "Utility Rates",
     "title": "Utility Rates",
     "content": " ",
     "url": "/utility-rates",
     
     "relUrl": "/utility-rates"
-  },"116": {
+  },"112": {
     "doc": "Utility Rates",
     "title": "Table of contents",
     "content": ". Here is a list of electric utilities in the US and availability schedule. If you can’t find the rate structure you want to use or large discrepancies in a calibrated model are found, please contact us with your utility name and service rate through Help Desk. Once you let us know, your rate will be available within a couple of days and will be notified when ready. http://docs.inversenergy.com:8080/link/2#bkmrk-please-note%2C-you-can . Please note, you can still analyze your building with average rates. However, you will not be able to calculate Demand Cost Savings and apply for incentive programs. ",
