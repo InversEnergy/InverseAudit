@@ -168,1223 +168,1237 @@
     "relUrl": "/baseline/calibration-results/#monthly-calibration"
   },"24": {
     "doc": "Read the calibration results",
+    "title": "The Stats tab",
+    "content": "Open a calibrated building on Home and choose Stats in the Building setup panel. Fit to the meter data says whether the calibrated model meets ASHRAE Guideline 14, then shows CV(RMSE) and NMBE as gauges: the dark mark is the limit for the building’s meter data, and a bar past it turns orange. A positive NMBE means the model uses less than measured; the caption says which way it goes. Electricity (kWh): . | Measured and Calibrated model, year weather - The meter year’s electricity and the model’s over the same hours (interval data) or billing periods (bills). Their difference is the NMBE. | Calibrated model, typical weather - The calibrated model run on a typical year. This is the baseline the energy audit uses, so it differs from the meter year by the weather too. | . Weather: the climate zone; Calibration weather, the actual weather of the meter year, measured hourly at the building’s location, which the calibration used; and Typical weather, the station of the typical year and its data set (for example TMY3), which the audit’s results are based on. Three charts open from the buttons at the top: . | Heatmap - Each day’s hours as colors, the measured beside the model with interval data. It shows working hours, weekends and gaps at a glance. | Time series - The hourly measured and model lines, to zoom into a week. | Monthly (Monthly comparison) - The meter data and the model month by month: electricity, peak demand and, with gas bills, natural gas. With interval data each calendar month is compared over the hours that have a reading; with bills, each bill against the model over the same billing period, the months the CV(RMSE) and NMBE are calculated from. Each month’s difference is shown above its bars, in red at 15% or more, so a season the model misses stands out even when the year’s statistics look fine. | . ",
+    "url": "/baseline/calibration-results/#the-stats-tab",
+    
+    "relUrl": "/baseline/calibration-results/#the-stats-tab"
+  },"25": {
+    "doc": "Read the calibration results",
     "title": "On the Benchmark page",
     "content": "The Benchmarking page shows the same two values as bars. The dark mark is the ASHRAE Guideline 14 limit, and the bar turns orange when the value goes past it. The label next to the bars shows whether the calibrated model meets the guideline. ",
     "url": "/baseline/calibration-results/#on-the-benchmark-page",
     
     "relUrl": "/baseline/calibration-results/#on-the-benchmark-page"
-  },"25": {
+  },"26": {
     "doc": "Read the calibration results",
     "title": "Related",
     "content": ". | Meter data - Exclude bad readings before recalibrating | Check inputs and run calibration - Run it again | Glossary - NMBE and CV(RMSE) definitions | . ",
     "url": "/baseline/calibration-results/#related",
     
     "relUrl": "/baseline/calibration-results/#related"
-  },"26": {
+  },"27": {
     "doc": "Check inputs and run calibration",
     "title": "Check inputs and run calibration",
     "content": "The calibration tunes your building’s energy model until it matches your meter data. Every benchmark and audit result comes from the calibrated model. For: AnalyzerTakes: 3 to 40 minutesWhere: Home › Building setup . | All four cards on the building are complete: Meter data, Geometry, Systems and Rates. None shows a Pending badge. | You are the building’s analyzer. Other people see the panel in view-only mode. | . ",
     "url": "/baseline/calibration/",
     
     "relUrl": "/baseline/calibration/"
-  },"27": {
+  },"28": {
     "doc": "Check inputs and run calibration",
     "title": "Steps",
     "content": ". | On Home, click the building’s card. In the Building setup panel, click Check inputs. The check takes a few seconds and covers your inputs, historical weather data, incentive rates and retrofit costs. Anything that needs fixing is listed on the Issues tab. | When the check passes, the button changes to Run calibration. Choose a Calibration length: . | Quick - About 3 minutes. | Standard - About 20 minutes. Recommended. | Thorough - About 40 minutes. Tests more combinations of model inputs. | . | To get an email when it’s done, check Send me an email when ready. Then click Run calibration and confirm with Run Calibration. | . ",
     "url": "/baseline/calibration/#steps",
     
     "relUrl": "/baseline/calibration/#steps"
-  },"28": {
+  },"29": {
     "doc": "Check inputs and run calibration",
     "title": "What you’ll see next",
     "content": "You can leave the page while the calibration runs. The button shows its progress, for example Calibration in progress (45%). When it finishes, it shows Calibration complete, and the Stats tab shows how closely the model matches your meter data: . | Meter data | CV(RMSE) | NMBE | . | Hourly | 30% or less | within ±10% | . | Monthly | 15% or less | within ±5% | . These are the ASHRAE Guideline 14 limits. See Read the calibration results. Next, open Benchmark to see the results. Clicking Calibration complete lets you rerun the calibration. Rerunning deletes the current benchmark and energy audit results, and you’ll need to check inputs and run the calibration again. ",
     "url": "/baseline/calibration/#what-youll-see-next",
     
     "relUrl": "/baseline/calibration/#what-youll-see-next"
-  },"29": {
+  },"30": {
     "doc": "Check inputs and run calibration",
     "title": "What the calibration matches",
-    "content": "The calibration runs the model hundreds of times, changing its inputs (schedules, setpoints, internal loads, envelope and HVAC settings) to find the combination that best matches your meter data. Every input is searched, including the schedules and setpoints you entered; the search starts from your values. | Hourly data - Every hour of electricity, scored as CV(RMSE) + 3 × |NMBE|. Bias counts three times because its Guideline 14 limit is a third of CV(RMSE)’s (10% against 30%). The model also has to match the weather-driven part of your electricity, which InverseAudit separates from the schedule-driven part in your data, so the two are split the way your building splits them. Chilled water and steam meter data count when you upload them. | Monthly data - Each month’s kWh against Guideline 14 (CV(RMSE) and NMBE), the seasonal shape of the year, and peak demand. | Gas and fuel bills - The year’s total, or each month when the bills are actual meter readings. They count for at most a quarter of the score. | . The model runs with your meter year’s actual weather: hourly temperatures, humidity, wind, solar radiation, cloud cover and station pressure. Any hours without measured weather are filled from a typical year: TMYx 2011-2025 from the nearest weather station (CWEC in Canada). Buildings that already have a TMY3 typical year keep it. The benchmark and savings use the typical year. Times are in the building’s local standard time throughout. See Supported data formats. ",
+    "content": "The calibration runs the model hundreds of times, changing its inputs (schedules, setpoints, internal loads, envelope and HVAC settings) to find the combination that best matches your meter data. Every input is searched, including the schedules and setpoints you entered; the search starts from your values. | Hourly data - Every hour of electricity, scored by its CV(RMSE). Bias is part of CV(RMSE), so as the hours match, NMBE comes down with it; it’s checked against Guideline 14 afterward. The model also has to match the weather-driven part of your electricity, which InverseAudit separates from the schedule-driven part in your data, so the two are split the way your building splits them. Chilled water and steam meter data count when you upload them. | Monthly data - Each bill’s kWh, scored by its CV(RMSE), and peak demand when it’s off by more than 15%. A bill’s peak is the highest 15 or 30 minutes and the model’s the highest hour, so a small difference is expected. Peak demand counts only when every bill’s demand fits its usage: no lower than the period’s average load and no more than ten times it. Otherwise the calibration matches the kWh only. | Gas and fuel bills - The year’s total, which counts as matched within 5%. Each month instead when the bills are actual meter readings, which counts as matched with a CV(RMSE) within 15%. Fuel oil is always fitted on the year’s total. Gas counts for at most a quarter of the score: gas bills are further from what a model can match than electricity. | . The model runs with your meter year’s actual weather: hourly temperatures, humidity, wind, cloud cover and station pressure. The solar radiation, and any hours without measured weather, come from a typical year: TMYx 2011-2025 from the nearest weather station (CWEC in Canada). Buildings that already have a TMY3 typical year keep it. The benchmark and savings use the typical year. Times are in the building’s local standard time throughout. See Supported data formats. ",
     "url": "/baseline/calibration/#what-the-calibration-matches",
     
     "relUrl": "/baseline/calibration/#what-the-calibration-matches"
-  },"30": {
+  },"31": {
     "doc": "Check inputs and run calibration",
     "title": "If something goes wrong",
     "content": "The Check inputs button is grayed out One of the four cards is still incomplete, or you aren’t the building’s analyzer. The line under the button says which inputs are missing. I need to stop the calibration Click the progress button and confirm with Stop Calibration. The progress is lost, but your inputs are kept, so you can run it again. If it just started, wait about 10 seconds before stopping it. CV(RMSE) or NMBE is outside the limits Check the meter data for gaps or outliers and confirm the systems and schedules. See Read the calibration results. Check inputs warns that a utility rate is far from what the bills cost A rate you entered is more than 25% off the average cost per unit on your bills. Savings are priced at that rate. If the bills’ costs are complete, open the Rates card and click Use the bills’ rate. See Rates from your bills. The warning doesn’t stop the calibration. Check inputs warns that a gas bill looks skipped With Bills are actual meter readings ticked, a month billed 0 between months with gas is usually a reading the utility skipped and added to the next bill, and the month-by-month comparison would chase it. Correct the bills, or untick the option so the calibration fits the year’s total. See Natural gas and fuel oil. \"Calibration failed\" Your inputs are saved. Run the calibration again. If it fails a second time, contact support with the building’s name. ",
     "url": "/baseline/calibration/#if-something-goes-wrong",
     
     "relUrl": "/baseline/calibration/#if-something-goes-wrong"
-  },"31": {
+  },"32": {
     "doc": "Check inputs and run calibration",
     "title": "Related",
     "content": ". | Read the calibration results - What CV(RMSE) and NMBE mean | Meter data - Exclude bad readings | Benchmark - Where to go after calibrating | . ",
     "url": "/baseline/calibration/#related",
     
     "relUrl": "/baseline/calibration/#related"
-  },"32": {
+  },"33": {
     "doc": "Cancel a subscription",
     "title": "Cancel a subscription",
     "content": "Subscriptions renew automatically until you cancel them. For: Subscriber (the building's owner)Where: Home › Building setup › Subscription . ",
     "url": "/account/cancel/",
     
     "relUrl": "/account/cancel/"
-  },"33": {
+  },"34": {
     "doc": "Cancel a subscription",
     "title": "Steps",
     "content": ". | On Home, click the building’s card to select it, then open the Subscription tab in the Building setup panel. | Click Cancel subscription and confirm. | . ",
     "url": "/account/cancel/#steps",
     
     "relUrl": "/account/cancel/#steps"
-  },"34": {
+  },"35": {
     "doc": "Cancel a subscription",
     "title": "What you’ll see next",
     "content": "When you cancel at any point during your monthly or annual cycle, the building stays active until the end of the current billing period and won’t renew after that. Past payments are not refunded. Only the subscriber (the building’s owner) can cancel the subscription. After an ownership transfer, that’s the new owner. Other people see the button grayed out. ",
     "url": "/account/cancel/#what-youll-see-next",
     
     "relUrl": "/account/cancel/#what-youll-see-next"
-  },"35": {
+  },"36": {
     "doc": "Cancel a subscription",
     "title": "Related",
     "content": ". | Subscribe a building | . ",
     "url": "/account/cancel/#related",
     
     "relUrl": "/account/cancel/#related"
-  },"36": {
+  },"37": {
     "doc": "Contact support",
     "title": "Contact support",
     "content": "Include the name of your building, so we can find it quickly. Technical issues support@inversenergy.com Engineering team engineers@inversenergy.com General inquiries help@inversenergy.com Incentive programs rebates@inversenergy.com Press press@inversenergy.com Billing issues billing-support@inversenergy.com ",
     "url": "/troubleshooting/contact-support/",
     
     "relUrl": "/troubleshooting/contact-support/"
-  },"37": {
+  },"38": {
     "doc": "Contact support",
     "title": "Related",
     "content": ". | Troubleshooting - Common problems and their fixes | . ",
     "url": "/troubleshooting/contact-support/#related",
     
     "relUrl": "/troubleshooting/contact-support/#related"
-  },"38": {
+  },"39": {
     "doc": "Contacts and clients",
     "title": "Contacts and clients",
     "content": "Your contact book holds the people you work with. Clients are the companies you audit for, and each contact belongs to one. Where: Home › Clients and Home › Contacts . ",
     "url": "/share/contacts-and-clients/",
     
     "relUrl": "/share/contacts-and-clients/"
-  },"39": {
+  },"40": {
     "doc": "Contacts and clients",
     "title": "Add a client company",
     "content": ". | On Home, open the Clients tab and click New Client. | Enter the Company Name and, optionally, the Account Manager Email. | Click Confirm. | . To rename a client, click its card. Clients can’t be deleted. ",
     "url": "/share/contacts-and-clients/#add-a-client-company",
     
     "relUrl": "/share/contacts-and-clients/#add-a-client-company"
-  },"40": {
+  },"41": {
     "doc": "Contacts and clients",
     "title": "Add a contact",
     "content": "If the contact is a client, create their company on the Clients tab first. | On Home, open the Contacts tab and click New Contact. | Enter the contact’s Name and Email. For a client, also choose their Company. | Click Confirm. | . A contact needs a company only to see that client’s posted audits. Analyzers don’t need one. To change a contact, click their name. If you change the email of a contact who is the analyzer of any of your buildings, those buildings follow the new email. To delete a contact, click the x on their card and confirm with Delete Contact. Deleting a contact doesn’t change buildings where they are the analyzer. ",
     "url": "/share/contacts-and-clients/#add-a-contact",
     
     "relUrl": "/share/contacts-and-clients/#add-a-contact"
-  },"41": {
+  },"42": {
     "doc": "Contacts and clients",
     "title": "Invite contacts to InverseAudit",
     "content": "Contacts need their own InverseAudit account, with the same email address, before they can work on a building or view a posted audit. | On the Contacts tab, click each contact you want to invite. Selected cards are highlighted. | Click Invite to InverseAudit and confirm. | . Each selected contact gets an email with a link to sign in or sign up. Clients sign in with I’m reviewing an audit report; analyzers sign in with I’m an energy professional. ",
     "url": "/share/contacts-and-clients/#invite-contacts-to-inverseaudit",
     
     "relUrl": "/share/contacts-and-clients/#invite-contacts-to-inverseaudit"
-  },"42": {
+  },"43": {
     "doc": "Contacts and clients",
     "title": "Assign a building to a client",
     "content": "A building is visible to a client only when it is assigned to the client’s company. | When you add the building, choose the company under Client (optional). | For an existing building, the building’s analyzer opens Edit building info and changes Client, choosing from the analyzer’s own client companies. The analyzer is you unless you’ve assigned someone else. Everyone else sees the window in view-only mode. | . ",
     "url": "/share/contacts-and-clients/#assign-a-baseline-to-a-client",
     
     "relUrl": "/share/contacts-and-clients/#assign-a-baseline-to-a-client"
-  },"43": {
+  },"44": {
     "doc": "Contacts and clients",
     "title": "Related",
     "content": ". | Roles and the analyzer - Assign someone else to run the analysis | What clients see - The client’s view of a posted audit | . ",
     "url": "/share/contacts-and-clients/#related",
     
     "relUrl": "/share/contacts-and-clients/#related"
-  },"44": {
+  },"45": {
     "doc": "Costs, payback and incentives",
     "title": "Costs, payback and incentives",
     "content": "How InverseAudit prices each measure, which utility incentives it applies, and how payback and SIR are calculated. For: AnalyzerWhere: Dataset › Retrofit Costs, Dataset › Utility Incentives and the Energy Auditing page . On this page . | Retrofit costs . | Create your own costs table | Change the cost of one measure | . | Utility incentives | Payback and SIR | Related | . ",
     "url": "/audit/costs-and-incentives/",
     
     "relUrl": "/audit/costs-and-incentives/"
-  },"45": {
+  },"46": {
     "doc": "Costs, payback and incentives",
     "title": "Retrofit costs",
     "content": "The cost of each measure comes from a retrofit costs table, priced per unit (for example per square foot of roof). Open Dataset › Retrofit Costs in the left menu to see it. When you click Update, the audit prices the measures with your own table for the building’s audit year and state if you have one, and otherwise the Standard dataset. The standard dataset can’t be edited. Calculate only recalculates the savings; the costs, the number of measures and the net project budget are recalculated when you click Update. | Column | Meaning | . | Life Expectancy | Years the measure lasts. Used for the SIR. | . | Bare Material | Material cost per unit, without overhead and profit | . | Bare Labor | Labor cost per unit, without overhead and profit | . | Bare Total Costs | Bare material + bare labor | . | Multiplier | Overhead and profit markup. A blank multiplier counts as 1. | . | Total O&amp;P | Bare Total Costs × Multiplier, the cost per unit used in the audit | . Create your own costs table . | On Retrofit Costs, click NEW COSTS TABLE. | Choose the audit year and state the table is for. | Choose Copy from a standard dataset, Copy from your dataset or Create an empty dataset, and click Create Table. | Edit the costs, then click Save changes. The bare total and Total O&amp;P columns update when the page reloads. | . Each year and state can have one table. Make the table for the building’s own state, because the audit only picks up a table whose state matches the building. Change the cost of one measure . On the Recommendations tab of the report, the analyzer can click a measure’s Retrofit Costs or Utility Incentives value, enter a new amount and click Update. A retrofit cost you type in is kept the next time you update the report. All other costs are priced again from the current retrofit costs table. ",
     "url": "/audit/costs-and-incentives/#retrofit-costs",
     
     "relUrl": "/audit/costs-and-incentives/#retrofit-costs"
-  },"46": {
+  },"47": {
     "doc": "Costs, payback and incentives",
     "title": "Utility incentives",
     "content": "Open Dataset › Utility Incentives and choose the Utility, Service Rate and Audit Year to see the incentive programs InverseAudit knows about. This page is maintained by InverseAudit. If your utility’s programs are missing or out of date, click Contact Us. | Performance-based incentives pay per kWh and per kW saved. These are the ones the audit calculates. | Retrofit-based incentives are listed with their program name and website for reference. They aren’t added to the audit’s totals. | The Whole building tab holds programs that pay for the whole building’s savings or per square foot. | . Incentives need a utility rate. With an average rate, the Net project budget card says that incentives can’t be applied. See Rates. In the Energy Audit, the Net project budget card shows the retrofit cost after incentives. Under its Manage menu, the analyzer chooses the Incentive Method: Measure-based or Whole building. Only methods the utility offers can be chosen. Portfolio and the report use the same method. Whole-building incentives add the Performance row (per kWh and kW saved) and the Building Area row (per ft²) when their switches are on. When the program sets a Max Limit (%), the building-area part is limited to that share of the project budget. ",
     "url": "/audit/costs-and-incentives/#utility-incentives",
     
     "relUrl": "/audit/costs-and-incentives/#utility-incentives"
-  },"47": {
+  },"48": {
     "doc": "Costs, payback and incentives",
     "title": "Payback and SIR",
     "content": "| Value | Formula | Where | . | Payback period | Cost of measures ÷ annual cost savings | Payback period card, Summary tab | . | Net payback period | (Cost of measures − incentives) ÷ annual cost savings | Summary tab, when there are incentives | . | SIR | Annual cost savings × life expectancy ÷ (retrofit cost − incentive) | Recommendations tab | . Savings aren’t discounted. An SIR above 1 means the measure pays for itself over its life. A payback under 30 years shows a green flag on the card. The Summary tab shows the savings of all selected measures implemented together. The Recommendations tab shows each measure on its own, so its rows don’t add up to the summary. ",
     "url": "/audit/costs-and-incentives/#payback-and-sir",
     
     "relUrl": "/audit/costs-and-incentives/#payback-and-sir"
-  },"48": {
+  },"49": {
     "doc": "Costs, payback and incentives",
     "title": "Related",
     "content": ". | Calculate, update and post - Recalculate after changing costs | Glossary - Payback and SIR definitions | . ",
     "url": "/audit/costs-and-incentives/#related",
     
     "relUrl": "/audit/costs-and-incentives/#related"
-  },"49": {
+  },"50": {
     "doc": "Add a building",
     "title": "Add a building",
     "content": "A building holds its information and data. Once it’s calibrated, it has a baseline: its calibrated energy model. For: Anyone with an accountTakes: 2 minutesWhere: Home › Buildings . Have the building’s full postal address ready, and know whether your electricity data is hourly (interval) or monthly. See What you need. ",
     "url": "/baseline/create-baseline/",
     
     "relUrl": "/baseline/create-baseline/"
-  },"50": {
+  },"51": {
     "doc": "Add a building",
     "title": "Steps",
     "content": ". | On Home, open the Buildings tab and click Add a building. | In the Add a building window, enter a building name, the year built and a description. You can also assign a client. A building that isn’t assigned to a client isn’t visible to clients. | Enter the building’s full postal address. InverseAudit uses it to find the building’s footprint on the map and to pick the weather data for the calibration. | Under Electric meter data, choose Interval data if you have 15-, 30- or 60-minute data, or Monthly data using utility bills if you have bills. Interval data gives a more accurate model. | Click Add building. | . ",
     "url": "/baseline/create-baseline/#steps",
     
     "relUrl": "/baseline/create-baseline/#steps"
-  },"51": {
+  },"52": {
     "doc": "Add a building",
     "title": "What you’ll see next",
     "content": "The buildings you’re working on appear on the Pinned tab of Home, under Pinned buildings. Use the Pin switch on the Buildings tab to pin or unpin a building. Benchmarking and Energy Auditing list only pinned buildings, and Portfolio shows only pinned buildings with a posted audit. Each pinned building has four cards to complete: Meter data, Geometry, Systems and Rates. A card shows an orange Pending badge until its data is saved. ",
     "url": "/baseline/create-baseline/#what-youll-see-next",
     
     "relUrl": "/baseline/create-baseline/#what-youll-see-next"
-  },"52": {
+  },"53": {
     "doc": "Add a building",
     "title": "Change the building information",
     "content": "Open the ⋮ menu on the building’s card and choose Edit building info, or click Edit next to the building on the Buildings tab. The Edit building info window has Save changes in place of Add building. Changing the postal code or the electric meter data type marks the Meter data and Systems cards incomplete again, and a calibrated building goes back to preparation. ",
     "url": "/baseline/create-baseline/#change-the-building-information",
     
     "relUrl": "/baseline/create-baseline/#change-the-building-information"
-  },"53": {
+  },"54": {
     "doc": "Add a building",
     "title": "Related",
     "content": ". | Meter data - Upload interval data or enter monthly bills | Geometry - Select the building’s footprint | Check inputs and run calibration - The last step | . ",
     "url": "/baseline/create-baseline/#related",
     
     "relUrl": "/baseline/create-baseline/#related"
-  },"54": {
+  },"55": {
     "doc": "Portfolio",
     "title": "Portfolio",
     "content": "Portfolio totals the savings of your posted audits, so you can see them across your buildings. Where: Portfolio in the side menu . Post at least one audit. Portfolio lists only posted audits of pinned buildings you own or analyze. See Calculate, update and post. ",
     "url": "/audit/dashboard/",
     
     "relUrl": "/audit/dashboard/"
-  },"55": {
+  },"56": {
     "doc": "Portfolio",
     "title": "Posted buildings",
     "content": "Each posted building has one row: . | Column | Meaning | . | In totals | The switch that counts the building in Total savings | . | Name, Data year, Type, Region | The building, the year of its utility data, its type and its state or province | . | Operational score, Asset score | Before (Pre) and after (Post) the retrofit | . | Measures | Number of measures in the audit | . | Energy costs A | Annual energy cost today | . | Cost savings B | Annual cost savings after the retrofit | . | Cost of measures C | Total retrofit cost | . | Utility incentives D | Utility incentives | . | Net project costs C-D | Retrofit cost after incentives | . | Payback (years): Simple C/B, Net (C-D)/B | Years to pay back, without and with incentives | . | Measured savings | Savings tracking’s latest measured year and its share of the expected savings. Click it to open Savings Tracking. | . Use Export (Copy, Print, Excel or PDF) to export the table, and Columns to hide columns. ",
     "url": "/audit/dashboard/#posted-buildings",
     
     "relUrl": "/audit/dashboard/#posted-buildings"
-  },"56": {
+  },"57": {
     "doc": "Portfolio",
     "title": "Total savings",
     "content": "The tiles at the top add up the buildings whose In totals switch is on, and say how many buildings and how much floor area they cover: . | Site energy savings in MBtu per year, and kBtu/ft² | Cost savings in dollars per year, and per ft² | Source energy savings in MBtu per year, and kBtu/ft² | GHG reductions in metric tons of CO₂e per year, and kg/ft² | . Below them, the savings are split by energy source, each with its cost savings. An energy source the buildings save nothing on isn’t shown. A newly posted building’s In totals switch starts off. Turn it on to include the building in the totals. ",
     "url": "/audit/dashboard/#total-savings",
     
     "relUrl": "/audit/dashboard/#total-savings"
-  },"57": {
+  },"58": {
     "doc": "Portfolio",
     "title": "Related",
     "content": ". | Costs, payback and incentives - Where columns C and D come from | . ",
     "url": "/audit/dashboard/#related",
     
     "relUrl": "/audit/dashboard/#related"
-  },"58": {
+  },"59": {
     "doc": "Supported data formats",
     "title": "Supported data formats",
     "content": "The meter data file formats InverseAudit can import, and how it reads kW and kWh. On this page . | Electricity . | kW and kWh in interval meter data . | Definitions | Data conversion | . | Data formats for InverseAudit . | Green Button format | CSV (comma-separated values) format . | Horizontal CSV format | Vertical CSV format . | Two-column format | Three-column format | . | . | . | Data import process | Best practices | Times and daylight saving | . | Natural gas and fuel oil | District chilled water | District steam | Related | . We continuously add new formats. For questions or problems with a data import, contact support. If your meter data file contains more than one year’s worth of data, our system will automatically use the latest one-year period. ",
     "url": "/reference/data-formats/",
     
     "relUrl": "/reference/data-formats/"
-  },"59": {
+  },"60": {
     "doc": "Supported data formats",
     "title": "Electricity",
     "content": "kW and kWh in interval meter data . Interval meter data typically presents energy consumption information in two key metrics: kilowatts (kW) and kilowatt-hours (kWh). Proper interpretation of these metrics is crucial for accurate energy analysis and billing. Definitions . | kW (kilowatt): A measure of power, representing the rate of energy consumption at a given moment. | kWh (kilowatt-hour): A measure of energy, representing the total amount of electricity consumed over a period of time. | . Data conversion . When converting interval data to hourly figures: . | kW values are averaged to represent the mean power demand. | kWh values are summed to represent the total energy consumption. | . Critical Interpretation . Misinterpreting kW as kWh or vice versa can lead to significant errors in energy calculations: . | If 30-minute kW intervals are treated as kWh, annual energy consumption is overestimated by 100% (double the actual kWh). | If 30-minute kWh intervals are treated as kW, annual energy consumption is underestimated by 50% (half the actual kWh). | . These errors, when propagated over extended periods, can result in substantial discrepancies in energy analysis. Data formats for InverseAudit . InverseAudit supports two major data formats: Green Button and CSV. This manual outlines the specifications for each format and how they are handled by the system. Green Button format . The Green Button is a standardized data format designed for easy and secure access to energy usage data. | Format: Standardized, machine-readable | Purpose: Allows utility customers to access their energy usage data in a consumer-friendly format | Handling: InverseAudit reads each reading’s unit and multiplier from the file (Wh or kWh, energy or power), adds 15-minute readings up into hours, and uses electricity readings only. If the building exports solar power, the hourly use is the energy delivered minus the energy sent back to the grid. Times are converted from UTC to the building’s local standard time. | One file per year: a year split across several XML files, or a zipped download, isn’t read. Unzip it, and use one file that covers the year. | . CSV (comma-separated values) format . CSV is a common output format for spreadsheet programs. InverseAudit supports two types of CSV formats and can automatically recognize the type. Horizontal CSV format . | Structure: Horizontal header shows time, First column shows date | Default Unit: kW | Unit Specification: If needed, include “kWh” or “kW” in the first cell of the first column | File Extension: .csv | . Vertical CSV format . InverseAudit supports two variations of the vertical format: . Two-column format . | Column 1: Date and time combined | Column 2: Electricity usage data | . Three-column format . | Column 1: Date | Column 2: Time | Column 3: Electricity usage data | . Data import process . InverseAudit automatically detects the format of the imported file (Green Button or CSV). For CSV files, the system determines whether it’s a horizontal or vertical format. The data is then processed according to the identified format. Best practices . | Keep the data consistent within each file. | For CSV files, keep the structure described above. | With the horizontal CSV format, specify the unit (kW or kWh) if it differs from the default. | . Times and daylight saving . InverseAudit works in the building’s local standard time throughout: the meter data, the weather and the model. Each reading belongs to the hour it ends in. | CSV files can be in standard time or in clock time (with daylight saving). A file with no readings in the hour that’s skipped in spring counts as clock time and is moved to standard time automatically. | Green Button files are in UTC and are converted. | The model applies daylight saving to the building’s schedules where the location observes it, so the HVAC still starts at the clock time people come in. | The charts on Home show standard time, so in summer a reading appears an hour earlier than on a wall clock. | . ",
     "url": "/reference/data-formats/#electricity",
     
     "relUrl": "/reference/data-formats/#electricity"
-  },"60": {
+  },"61": {
     "doc": "Supported data formats",
     "title": "Natural gas and fuel oil",
     "content": "There’s no file format for natural gas or fuel oil. Enter the monthly use (therms for natural gas, gallons for fuel oil) on the Natural gas / fuel oil tab of the Meter Data window, or import your bills with AI on its first tab. Enter 0 for a month the utility didn’t read. See Natural gas and fuel oil. ",
     "url": "/reference/data-formats/#natural-gas-and-fuel-oil",
     
     "relUrl": "/reference/data-formats/#natural-gas-and-fuel-oil"
-  },"61": {
+  },"62": {
     "doc": "Supported data formats",
     "title": "District chilled water",
     "content": "| Company | Reference | Format | Interval | Tested | . | InverseAudit | - | csv (comma-separated values) | 60 mins | Yes | . ",
     "url": "/reference/data-formats/#district-chilled-water",
     
     "relUrl": "/reference/data-formats/#district-chilled-water"
-  },"62": {
+  },"63": {
     "doc": "Supported data formats",
     "title": "District steam",
     "content": "| Company | Reference | Format | Interval | Tested | . | InverseAudit | - | csv (comma-separated values) | 60 mins | Yes | . ",
     "url": "/reference/data-formats/#district-steam",
     
     "relUrl": "/reference/data-formats/#district-steam"
-  },"63": {
+  },"64": {
     "doc": "Supported data formats",
     "title": "Related",
     "content": ". | Meter data - Upload or import your data | Missing data and outliers | . ",
     "url": "/reference/data-formats/#related",
     
     "relUrl": "/reference/data-formats/#related"
-  },"64": {
+  },"65": {
     "doc": "ECM parameters",
     "title": "ECM parameters",
     "content": "Every parameter in the Measures panel on Energy Auditing, by group. On this page . | How to read a row | Envelope | Space Use . | Lighting | Plug loads | Process loads | Load profile charts | . | Operations | Air-side | Water-side 1: chilled water plant | Water-side 2: hot water plant | Water Heater | Solar PV | Electrification | Related | . ",
     "url": "/reference/ecm-parameters/",
     
     "relUrl": "/reference/ecm-parameters/"
-  },"65": {
+  },"66": {
     "doc": "ECM parameters",
     "title": "How to read a row",
     "content": "Each row has up to three buttons: . | Existing (gray) - Your building as calibrated. | Energy Code (blue) - What the selected energy code requires. Shown only where the code sets a value. | Customized (light blue) - The value you set. Select it, then move the slider. | . Sliders that improve a building only go one way. For example, the roof R-value slider runs from the existing value up, and the lighting power slider from the existing value down. Values are shown with one decimal place. A parameter appears only when it applies to your building’s systems. The conditions are listed in each table. If the building has a second HVAC zone, the Operations and Air-side tabs are split into (Main) and (Sub). ",
     "url": "/reference/ecm-parameters/#how-to-read-a-row",
     
     "relUrl": "/reference/ecm-parameters/#how-to-read-a-row"
-  },"66": {
+  },"67": {
     "doc": "ECM parameters",
     "title": "Envelope",
     "content": "The external walls, windows, roof and floor of the building. The info icon next to the heading shows the window-to-wall ratio (WWR). | Parameter | What it is | Unit or options | . | Roof | Effective R-value of the roof insulation | ft²·h·°F/Btu, up to 60 | . | Exterior Walls | Effective R-value of the wall insulation | ft²·h·°F/Btu, up to 25 | . | Windows | Assembly U-value | Btu/h·ft²·°F, down to 0.1 | . | Window SC-value | Shading coefficient of the windows | down to 0.1 | . | Window Film | Add window film | As-is, use | . | Infiltration | Air leakage during off-hours | CFM/ft², down to 0.2 | . ",
     "url": "/reference/ecm-parameters/#envelope",
     
     "relUrl": "/reference/ecm-parameters/#envelope"
-  },"67": {
+  },"68": {
     "doc": "ECM parameters",
     "title": "Space Use",
     "content": "Lighting . | Parameter | What it is | Unit or options | . | Interior Lighting | Lighting power density | W/ft², down to 0.4 | . | Lighting Control - During Unoccupied | Share of lighting turned off when unoccupied | 0 to 0.5 (0–50%) | . | Lighting Control - During Occupied | Share of lighting turned off when occupied | 0 to 0.5 (0–50%) | . Plug loads . Energy codes don’t require plug load reductions, but buildings with high plug loads can save a lot here. | Parameter | What it is | Unit or options | . | Plug Load | Plug load density | W/ft², 0.1 to 1.2 | . | Plug Load Control - During Unoccupied | Share of plug load turned off when unoccupied | 0 to 0.5 (0–50%) | . | Plug Load Control - During Occupied | Share of plug load turned off when occupied | 0 to 0.5 (0–50%) | . Process loads . Loads that aren’t lighting, heating, ventilation, cooling or water heating, such as data equipment. | Parameter | What it is | Unit or options | . | Base Load | Internal heat gains from process equipment | kW, down to 0 | . Load profile charts . The Lighting Load Profile and Plug Load Profile charts show a 24-hour profile as a fraction of the peak, for weekdays (M–F), Sat and Sun. Choose Typical Operation or 24/7 Operation for buildings with floors running 24/7. The Existing line comes from the calibrated model. The Customized line follows your lighting or plug load density, the control reductions, and the HVAC startup and shutdown times on the Operations tab. The profiles themselves can’t be edited. ",
     "url": "/reference/ecm-parameters/#space-use",
     
     "relUrl": "/reference/ecm-parameters/#space-use"
-  },"68": {
+  },"69": {
     "doc": "ECM parameters",
     "title": "Operations",
     "content": "Operational measures don’t change the asset score, because the asset score uses typical operation schedules. | Parameter | What it is | Unit or options | Shown when | . | HVAC Startup - Weekdays | When the HVAC turns on | Midnight to 8 am | Always (“24/7” if every floor runs 24/7) | . | HVAC Shutdown - Weekdays | When the HVAC turns off | Midnight to 4 pm | Always | . | Days of Operation | Last operating day of the week, from Monday | Fri, Sat, Sun, Hol | Always | . | 24/7 Conditioned Floors | Above-ground floors running 24/7 | Number of floors | Main zone | . | Floors with Lights Off | Conditioned above-ground floors with the lights off | Number of floors | Main zone | . | Unconditioned Floors | Above-ground floors that aren’t conditioned | Number of floors | Main zone | . | Unconditioned Basements | Below-ground floors that aren’t conditioned | Number of floors | Main zone | . | Occupancy during Summer Break - Lighting and Plug Loads | Whether the building is occupied over the summer | occupied, unoccupied | University buildings | . | Occupancy during Summer Break - Predominant HVAC | Whether the HVAC runs over the summer | use, off | University buildings | . | Cooling Setpoint | Occupied cooling temperature | °F, 65 to 80 | Always | . | Heating Setpoint | Occupied heating temperature | °F, 64 to 78 | Always | . | Cooling Setback | Unoccupied cooling temperature | °F, 70 to 90 | Always | . | Heating Setback | Unoccupied heating temperature | °F, 44 to 70 | Always | . | DOAS Scheduling | When the dedicated outdoor-air unit runs | occupied, 24 hrs | PTAC, PTHP, VRF, WSHP and fan coil systems | . ",
     "url": "/reference/ecm-parameters/#operations",
     
     "relUrl": "/reference/ecm-parameters/#operations"
-  },"69": {
+  },"70": {
     "doc": "ECM parameters",
     "title": "Air-side",
     "content": "The air distribution systems, usually a large share of the energy cost. | Parameter | What it is | Unit or options | Shown when | . | DX Cooling | Cooling efficiency | EER, up to 15 | DX cooling | . | Min Fan Operation - System Level | Minimum fan flow of the air handler | Fraction, 0.2 to 1.0 | VAV systems | . | Min Airflow Ratio - Zone Level | Minimum flow of the VAV boxes | Fraction, 0.2 to 1.0 | VAV systems | . | DX Compressor | Compressor speed control | one-spd, variable | Heat pumps, VRF, WSHP | . | Heat Pump Heating | Heating efficiency | COP, up to 4.5 | Heat pumps, VRF, WSHP | . | Furnace Heating | Furnace efficiency | Fraction, up to 0.95 | Gas or oil furnaces | . | Cooling Supply Air | Supply-air temperature in cooling | °F, 54 to 59 | Zones with cooling | . | Heating Supply Air | Supply-air temperature in heating | °F, 90 to 120 | Zones with heating | . | Indoor Fan Operation - During Occupied | Fan mode while occupied | intermittent, continuous | Always | . | Zone Fan Operation - During Unoccupied | Fan behavior at night | cycle-on-first, stay-off, cycle-on-any, zone-fans-only | Always | . | Interior Fan Speed | Supply fan speed control | one-spd, two-spd, variable (VAV: one-spd, two-spd, optimized, captured) | Always | . | Air-side Economizer - Availability | Whether an economizer is used | off, use | Systems with cooling: PSZ-AC, PSZ-HP, PVAV, VAV, SZ-CV-HW, SZ-CV-ER | . | Air-side Economizer - Integrated | Whether the economizer works together with cooling | off, use | Same as above | . | Air-side Economizer - Drybulb High Limit | Outdoor temperature above which the economizer stops | °F, 50 to 75 | Same as above | . | Supply Air Temperature Reset | Reset of the supply-air temperature | off, use | VAV systems | . | Demand Control Ventilation | Outdoor air based on occupancy | off, use | VAV systems | . | Motorized Damper | Outdoor-air damper control | use, off | Always | . | Cooling Capacity Optimization | Cooling capacity as % of existing | %, 50 to 100 | Always | . | Heating Capacity Optimization | Heating capacity as % of existing | %, 50 to 100 | Always | . | Minimum Outside Air | Outdoor air as % of total airflow | %, 10 to 40 | Always | . | Exhaust Air | Exhaust as % of total airflow | %, 0 to 15 | Always | . For VAV systems whose fan speed is captured, a chart compares the calibrated fan curve with the ASHRAE reference curve. ",
     "url": "/reference/ecm-parameters/#air-side",
     
     "relUrl": "/reference/ecm-parameters/#air-side"
-  },"70": {
+  },"71": {
     "doc": "ECM parameters",
     "title": "Water-side 1: chilled water plant",
     "content": "Shown when the building has a chiller plant, or a cooling tower for water-cooled DX or WSHP. The info icon shows the captured chiller capacity. | Parameter | What it is | Unit or options | Shown when | . | Chiller Type | Compressor type | screw, scroll, recip, centfgl | Air- or water-cooled chillers | . | Chiller Condenser Type | Condenser cooling | air-cooled, water-cooled | Chillers without a water-side economizer | . | Water-side Economizer | Free cooling through the cooling tower | off, use | Water-cooled chillers with a water-side economizer | . | Chiller Performance | Chiller efficiency | kW/ton, down to 0.4 | Chillers | . | Chiller Size | Capacity as % of existing | %, 50 to 120 | Chillers | . | Cooling Tower Fan Control | Tower fan speed control | one-speed, two-spd, variable | Water-cooled chillers, water-cooled DX, WSHP | . | Cooling Tower Pump Head | Condenser water pump head | ft, down to 10 | Same as above | . | Chilled Water Loop Configuration | Chilled water pumping | primary-only constant, primary-only variable, primary/secondary | Chillers | . | Primary CHW Pump Head, Secondary CHW Pump Head | Pump heads of a primary/secondary loop | ft, down to 10 | Primary/secondary loops | . | Primary-only CHW Pump Head | Pump head of a primary-only loop | ft, down to 10 | Primary-only loops | . | Chilled Water Temperature | Chilled water supply temperature | °F, 41 to 45 | Chillers | . | Chilled Water Snap Control | Turn chilled water off by outdoor temperature | off, use | Chillers | . | Chilled Water Temperature Control | Chilled water temperature reset | fixed, OA reset, load reset | Chillers | . ",
     "url": "/reference/ecm-parameters/#water-side-1-chilled-water-plant",
     
     "relUrl": "/reference/ecm-parameters/#water-side-1-chilled-water-plant"
-  },"71": {
+  },"72": {
     "doc": "ECM parameters",
     "title": "Water-side 2: hot water plant",
     "content": "Shown when the building has a boiler or a hot water plant. The info icon shows the captured boiler capacity. | Parameter | What it is | Unit or options | . | Boiler Type | Boiler kind | gas, cond (condensing), steam, elec | . | Boiler Performance | Thermal efficiency | %, up to 99 | . | Boiler Size | Capacity as % of existing | %, 50 to 120 | . | Hot Water Pump | Pump head | ft, down to 10 | . | Hot Water Loop | Hot water supply temperature | °F, 125 to 185 | . | Hot Water Snap Control | Turn hot water off by outdoor temperature | off, use | . | HW (CHW) Snap | Outdoor temperature for the snap control | °F, 45 to 70 | . | Hot Water Temperature Reset | Hot water temperature reset | fixed, OA reset, load reset | . ",
     "url": "/reference/ecm-parameters/#water-side-2-hot-water-plant",
     
     "relUrl": "/reference/ecm-parameters/#water-side-2-hot-water-plant"
-  },"72": {
+  },"73": {
     "doc": "ECM parameters",
     "title": "Water Heater",
     "content": "Shown when the building has a domestic water heater. Savings are based on the captured occupancy schedule, the water heater capacity and, for gas water heaters, the gas use. | Parameter | What it is | Unit or options | . | Water Heater Type | Fuel or technology | gas, elec, heat pump | . | Water Heater Performance | Efficiency | % (EF or Et) or COP. Code values: gas 80, electric 96, heat pump 3.6 | . | Peak Demand | Hot water demand | GPM | . ",
     "url": "/reference/ecm-parameters/#water-heater",
     
     "relUrl": "/reference/ecm-parameters/#water-heater"
-  },"73": {
+  },"74": {
     "doc": "ECM parameters",
     "title": "Solar PV",
     "content": "Generation is based on monocrystalline panels with 21% efficiency. | Parameter | What it is | Unit or options | . | Solar PV capacity | Inverter size | kW, 0 to 999 | . | Mount Tilt | Panel tilt angle | degrees, 20 to 65. The blue button suggests a tilt based on the building’s latitude. | . ",
     "url": "/reference/ecm-parameters/#solar-pv",
     
     "relUrl": "/reference/ecm-parameters/#solar-pv"
-  },"74": {
+  },"75": {
     "doc": "ECM parameters",
     "title": "Electrification",
     "content": "Shown when the building heats with gas or fuel oil. These options replace the heating system chosen on the other tabs, for an electrification study. Space Heating Source is a list: As-Built/Existing, Electric Resistance, Air-source Heat Pump, Electric Boiler and Variable Refrigerant Flow (VRF). Options that don’t fit the building’s air distribution are grayed out. The heat pump is modeled at 3.0 COP, and VRF at 11 EER and 3.3 COP. The rest of the existing system is assumed to stay as it is: for example, a gas furnace in a rooftop unit can be replaced with electric resistance heat or a heat pump. ",
     "url": "/reference/ecm-parameters/#electrification",
     
     "relUrl": "/reference/ecm-parameters/#electrification"
-  },"75": {
+  },"76": {
     "doc": "ECM parameters",
     "title": "Related",
     "content": ". | Run an energy audit - Using the Measures panel | . ",
     "url": "/reference/ecm-parameters/#related",
     
     "relUrl": "/reference/ecm-parameters/#related"
-  },"76": {
+  },"77": {
     "doc": "Scenarios and the energy use gap",
     "title": "Scenarios and the energy use gap",
     "content": "The End-use benchmarking panel shows how much energy your building uses above a code-compliant version of itself, and whether that comes from how it’s built or how it’s run. For: Everyone with access to the buildingWhere: Analysis › Benchmarking › End uses . On this page . | Compared scenarios | Energy use gap | End-use performance | Charts | Related | . ",
     "url": "/benchmark/energy-use-gap/",
     
     "relUrl": "/benchmark/energy-use-gap/"
-  },"77": {
+  },"78": {
     "doc": "Scenarios and the energy use gap",
     "title": "Compared scenarios",
     "content": "All benchmark results compare three versions of your building, all derived from the calibrated model: . |   | Scenario | What it is | . | A | Current building performance | Your building as it operates today | . | B | Typical operation scenario | The same building with typical schedules and setpoints | . | C | Code-compliant scenario | The same building built to the selected energy code | . The Energy use gap tab opens with the site EUI of each scenario in kBtu/ft². Below it, two bars each start from your building’s site EUI (A): . | Asset gap: above code (A - C, green) - Energy your envelope and equipment use above code-level ones, on your current schedules. | Operational gap: above typical operation (A - B, orange) - Energy above the same building run on typical schedules and setpoints. | . Both gaps are measured from your building against different scenarios, so they overlap and don’t add up. A negative gap means your building does better than that scenario. ",
     "url": "/benchmark/energy-use-gap/#compared-scenarios",
     
     "relUrl": "/benchmark/energy-use-gap/#compared-scenarios"
-  },"78": {
+  },"79": {
     "doc": "Scenarios and the energy use gap",
     "title": "Energy use gap",
     "content": "The Energy use gap tab breaks both gaps down by end use. For each end use it shows its energy source, its share of the site EUI, its asset gap (A - C) and its operational gap (A - B). All fuels are shown in kBtu/ft². End uses below 2% of the site EUI are listed under the table instead of in it. ",
     "url": "/benchmark/energy-use-gap/#energy-use-gap",
     
     "relUrl": "/benchmark/energy-use-gap/#energy-use-gap"
-  },"79": {
+  },"80": {
     "doc": "Scenarios and the energy use gap",
     "title": "End-use performance",
     "content": "The End-use performance tab shows the EUI of each scenario and the operational and asset scores for each end use: . | Electricity - In kWh/ft². | Other end uses - Natural gas and other fuels, in kBtu/ft². | Energy use scores - Totals by energy source, in kBtu/ft². | . Score cells are shaded by score, with the key above the tables: green for 80 and above, then lighter to darker yellow for 50-79 and 40-49, and red for 30-39 and below 30. Scores below 40 are also in bold. A dash (–) means there is no score because the reference scenario uses no energy for that end use. In the example below, pumps, ventilation and interior lighting have low operational scores, which points to schedules and setpoints, such as fans and pumps running during unoccupied hours. Adjusting those schedules has a high potential for saving energy. ",
     "url": "/benchmark/energy-use-gap/#end-use-performance",
     
     "relUrl": "/benchmark/energy-use-gap/#end-use-performance"
-  },"80": {
+  },"81": {
     "doc": "Scenarios and the energy use gap",
     "title": "Charts",
     "content": "The End-use EUI chart tab compares the three scenarios for every end use. The End-use score chart tab plots the operational and asset scores of each end use together. ",
     "url": "/benchmark/energy-use-gap/#charts",
     
     "relUrl": "/benchmark/energy-use-gap/#charts"
-  },"81": {
+  },"82": {
     "doc": "Scenarios and the energy use gap",
     "title": "Related",
     "content": ". | Scores - The whole-building scores | Run an energy audit - Try measures for the end uses with the largest gaps | . ",
     "url": "/benchmark/energy-use-gap/#related",
     
     "relUrl": "/benchmark/energy-use-gap/#related"
-  },"82": {
+  },"83": {
     "doc": "Geometry",
     "title": "Geometry",
     "content": "Select your building’s footprint on the map and describe its floors. For: AnalyzerWhere: Home › Geometry card . ",
     "url": "/baseline/geometry/",
     
     "relUrl": "/baseline/geometry/"
-  },"83": {
+  },"84": {
     "doc": "Geometry",
     "title": "Steps",
     "content": ". | On Home, click the building’s Geometry card to open Building geometry. | Select your building on the map with the Select footprint tool, the first one on the map’s toolbar. If the estimated area is incorrect, update Total area manually. | Complete the building details: . | Building use type | Floor-to-floor height and Floor-to-ceiling height | Above ground and Below ground - The number of floors | Total area | ENERGY STAR parking (optional) - The open, fully enclosed and partially enclosed parking areas, required only for the ENERGY STAR score | . | Click Save changes. | . On a calibrated building, saving a different footprint, building use type, area, number of floors or floor heights sends the building back to preparation. Check inputs and run the calibration again afterwards. Moving the map view doesn’t. The pre-processed footprints are only available for US buildings. For a building in Canada, the map starts with a rectangle: drag its corners to fit the building’s footprint. If your building is a recent construction and cannot be found in our GIS database, you can select a nearby building’s footprint for use. ",
     "url": "/baseline/geometry/#steps",
     
     "relUrl": "/baseline/geometry/#steps"
-  },"84": {
+  },"85": {
     "doc": "Geometry",
     "title": "What you’ll see next",
     "content": "The Geometry card no longer shows Pending. When all four cards are done, check inputs and run the calibration. ",
     "url": "/baseline/geometry/#what-youll-see-next",
     
     "relUrl": "/baseline/geometry/#what-youll-see-next"
-  },"85": {
+  },"86": {
     "doc": "Geometry",
     "title": "Edit a footprint",
     "content": "Adding corners increases the number of segments and the computation time, so simplify the footprint by removing any corners it doesn’t need. | Click the Adjust footprint tool, the second one on the map’s toolbar, then click the footprint you want to edit. The map shows Editing the footprint. | The footprint’s corners appear. Drag a corner to move it, drag a midpoint to add a corner, or double-click a corner to remove it. | When you’re done editing, click the Select footprint tool and select the edited footprint. | . To start over, click Start over, the last tool. It clears the footprint so you can select another one; nothing is saved until you click Save changes. ",
     "url": "/baseline/geometry/#edit-a-footprint",
     
     "relUrl": "/baseline/geometry/#edit-a-footprint"
-  },"86": {
+  },"87": {
     "doc": "Geometry",
     "title": "Split the building into two zones",
     "content": "If part of the building has a different use or HVAC system, split it into a main zone and a sub zone. | Click the Draw a split line to divide the mass into two zones tool. | Click on the map to draw a line across the footprint, then right-click to finish. | Click Set as Main on the zone with the main occupancy. It is labeled Main Occupancy. | Enter the number of Stories for the sub zone. | . The Measures panel then shows separate measures for the main zone and the sub zone. ",
     "url": "/baseline/geometry/#split-the-building-into-two-zones",
     
     "relUrl": "/baseline/geometry/#split-the-building-into-two-zones"
-  },"87": {
+  },"88": {
     "doc": "Geometry",
     "title": "If something goes wrong",
     "content": "My building isn't on the map Recent buildings may be missing from the map data. Select a nearby building’s footprint and edit it to match yours, then enter the correct Total area. My building is in Canada Pre-processed footprints are only available for US buildings, so the map starts with a rectangle instead. Drag its corners to fit the building’s footprint, as in Edit a footprint. ",
     "url": "/baseline/geometry/#if-something-goes-wrong",
     
     "relUrl": "/baseline/geometry/#if-something-goes-wrong"
-  },"88": {
+  },"89": {
     "doc": "Geometry",
     "title": "Related",
     "content": ". | Systems - HVAC, hot water and schedules | Rates - Utility rate structure | . ",
     "url": "/baseline/geometry/#related",
     
     "relUrl": "/baseline/geometry/#related"
-  },"89": {
+  },"90": {
     "doc": "Glossary",
     "title": "Glossary",
     "content": "Acronyms and terms used in InverseAudit and its reports. On this page . | Acronyms | Terms | . ",
     "url": "/reference/glossary/",
     
     "relUrl": "/reference/glossary/"
-  },"90": {
+  },"91": {
     "doc": "Glossary",
     "title": "Acronyms",
     "content": ". | AHU: Air Handling Unit | ASHRAE: American Society of Heating, Refrigerating and Air-Conditioning Engineers | BEMS: Building Energy Management System | CFM: Cubic Feet per Minute | CHW: Chilled Water | COP: Coefficient of Performance | CWEC: Canadian Weather year for Energy Calculation, the typical year used for Canadian buildings | CV(RMSE): Coefficient of Variation of the Root Mean Squared Error | DHW: Domestic Hot Water | DOAS: Dedicated Outdoor Air System | DX: Direct Expansion | ECM: Energy Conservation Measure | EER: Energy Efficiency Ratio | EUI: Energy Use Intensity | FEMP: Federal Energy Management Program | GHG: Greenhouse Gas | GSF: Gross Square Feet | HVAC: Heating, Ventilation and Air Conditioning | IPMVP: International Performance Measurement and Verification Protocol | kBtu: Thousand British Thermal Units | kW: Kilowatt, a unit of power (demand) | kWh: Kilowatt-hour, a unit of energy | MBtu: Million British Thermal Units, as reported by the DOE-2 energy model | NMBE: Normalized Mean Bias Error | O&amp;P: Overhead and Profit | PSZ-AC: Packaged Single-Zone Air Conditioner | PTAC / PTHP: Packaged Terminal Air Conditioner / Heat Pump | PVAV: Packaged Variable Air Volume | SC: Shading Coefficient | SHGC: Solar Heat Gain Coefficient | SIR: Savings-to-Investment Ratio | TMY3: Typical Meteorological Year 3, the typical year of buildings created before November 2026 | TMYx: A typical meteorological year built from recent weather (2011-2025 here), the typical year of new buildings | VAV: Variable Air Volume | VRF: Variable Refrigerant Flow | WSHP: Water-Source Heat Pump | WWR: Window-to-Wall Ratio | . ",
     "url": "/reference/glossary/#acronyms",
     
     "relUrl": "/reference/glossary/#acronyms"
-  },"91": {
+  },"92": {
     "doc": "Glossary",
     "title": "Terms",
     "content": ". | Analyzer: The person who enters the building’s data, runs the calibration and performs the energy audit. Other people the building is shared with see it in view-only mode. See Roles and the analyzer. | ASHRAE Guideline 14: A guideline for measuring energy savings. Its CV(RMSE) and NMBE limits are used to judge whether a calibrated model fits the meter data. | ASHRAE Level 1 audit: A brief audit, as ASHRAE Standard 211 defines it: the building and its energy use, a benchmark and target, and low-cost and capital measures with qualitative estimates. It includes a site visit by a qualified energy auditor. See The ASHRAE Level 1 and Level 2 reports. | ASHRAE Level 2 audit: An energy survey and engineering analysis, as ASHRAE Standard 211 defines it, that identifies energy conservation measures with their savings and cost estimates. It includes a site visit by a qualified energy auditor. See The ASHRAE Level 1 and Level 2 reports. | ASHRAE Standard 211: The standard for commercial building energy audits (ANSI/ASHRAE/ACCA Standard 211). It defines Level 1, Level 2 and Level 3 audits and what their reports contain. | Asset gap: The energy a building uses above the code-compliant scenario because of its design, envelope and equipment (B - C). | Asset score: A rating of a building’s as-built physical characteristics and energy systems, independent of occupancy and operation. It compares the calibrated model with the same building built to the selected energy code: 100 - 50 × A / C. | Audit report: The report produced on the Energy Auditing page, with the Summary, Analysis, Recommendations and Utility analysis tabs. It can be downloaded as PDF. | Average rate: A single rate per unit of energy, used when your utility’s rate structure isn’t selected. With an average rate, demand cost savings and utility incentives aren’t calculated. Also called a blended rate. | Baseline: The building’s calibrated energy model: its meter data, geometry, systems and rates, run through the calibration. A building has a baseline once it’s calibrated. | Calibration: The process that tunes the building’s energy model until it matches the meter data. See Check inputs and run calibration. | Calibration length: How long the calibration searches for the best fit: Quick (about 3 minutes), Standard (about 20 minutes, recommended) or Thorough (about 40 minutes). | Client: A company you share audits with. Its contacts sign in with I’m reviewing an audit report and see the posted audits of buildings assigned to the company. | Climate zone: A geographic region defined by ASHRAE standards, characterized by similar weather patterns, used to determine the energy code requirements. | Compared scenarios (A, B, C): The three versions of the building used on the Benchmark page, all derived from the calibrated model. A is the building as it operates today, B is the same building with typical schedules and setpoints, and C is the same building built to the selected energy code. | CV(RMSE): A statistical measure of how much the model’s results vary from the measured data: the root mean squared error divided by the mean of the measured data. A lower value means a better fit. ASHRAE Guideline 14 accepts up to 30% for hourly data and 15% for monthly data. | End-use analysis: A breakdown of energy use by category within a building, such as lighting, heating, cooling or plug loads. | Energy conservation measure (ECM): A specific action or upgrade that reduces a building’s energy use or improves its efficiency. | Energy use gap: How much more energy the building uses than the code-compliant scenario (A - C), split into the asset gap and the operational gap. See Scenarios and the energy use gap. | Energy use intensity (EUI): A building’s annual energy use divided by its floor area, usually in kBtu/ft². | ENERGY STAR score: A 1-100 rating of a building’s energy efficiency compared with similar buildings nationwide. Higher is better, and 50 is the median. | Green Button: A standardized XML format for downloading energy use data from a utility. | Interval data: Meter data recorded every 15, 30 or 60 minutes, usually by a smart meter or a BEMS. | Lighting power density: Installed lighting power per floor area, in W/ft². | Net payback period: The cost of the measures minus incentives, divided by the annual cost savings. | NMBE: A statistical measure of the model’s overall bias: the mean difference between measured and simulated data, divided by the mean of the measured data. A value closer to zero is better. ASHRAE Guideline 14 accepts within ±10% for hourly data and ±5% for monthly data. | Operational gap: The energy a building uses above the typical operation scenario because of its schedules, setpoints and operating practice (A - B). | Operational score: A rating of how the building is operated. It compares the calibrated model with the same building run on typical (ASHRAE) schedules: 100 - 50 × A / B. | Payback period: The time it takes for a measure’s savings to equal its cost. | Performance-based incentive: A utility incentive paid per kWh and per kW saved. | Post / Unpost: Posting shares the audit report with the building’s client and adds the building to Portfolio. Unposting hides the report again so you can make changes. | R-value: A material’s thermal resistance, in ft²·h·°F/Btu. Higher is better insulated. | Savings-to-investment ratio (SIR): A measure’s savings over its lifetime divided by its net cost (retrofit cost minus incentives). InverseAudit doesn’t discount future savings. | Setback temperature: A less strict temperature setting used during unoccupied periods to save energy while keeping minimal comfort. | Setpoint temperature: The temperature the HVAC system maintains during occupied periods. | Site EUI: The energy used on site per floor area, in kBtu/ft² per year. | Source EUI: Site energy plus the losses from producing and delivering it, per floor area. ENERGY STAR uses source energy. | Subscriber: The building’s owner: the person who created it, or the new owner after a transfer. The subscriber subscribes and cancels, and assigns the analyzer. | U-value: The rate of heat transfer through a building element, in Btu/h·ft²·°F. Lower is better insulated. | Weather normalization: Adjusting energy use for weather, so different periods or locations can be compared fairly. | Whole-building energy model: A simulation of the building’s energy performance as one system, including climate, envelope and mechanical systems. | . ",
     "url": "/reference/glossary/#terms",
     
     "relUrl": "/reference/glossary/#terms"
-  },"92": {
+  },"93": {
     "doc": "How scores are calculated",
     "title": "How scores are calculated",
     "content": "The models behind the benchmark scores and the energy savings. On this page . | Calibrated model | Weather-normalized model | Two reference models . | Operational score | Asset score | . | Energy savings | Related | . ",
     "url": "/reference/how-scores-are-calculated/",
     
     "relUrl": "/reference/how-scores-are-calculated/"
-  },"93": {
+  },"94": {
     "doc": "How scores are calculated",
     "title": "Calibrated model",
     "content": ". | What it is: A model based on actual weather data and measured energy use. | How it’s used: The starting point for all other calculations. | . ",
     "url": "/reference/how-scores-are-calculated/#calibrated-model",
     
     "relUrl": "/reference/how-scores-are-calculated/#calibrated-model"
-  },"94": {
+  },"95": {
     "doc": "How scores are calculated",
     "title": "Weather-normalized model",
     "content": ". | What it is: The calibrated model run with a typical year’s weather: TMYx 2011-2025 from the nearest weather station (CWEC in Canada), or TMY3 for buildings that already use it. | How it’s used: For consistent energy analysis across different time periods. | . ",
     "url": "/reference/how-scores-are-calculated/#weather-normalized-model",
     
     "relUrl": "/reference/how-scores-are-calculated/#weather-normalized-model"
-  },"95": {
+  },"96": {
     "doc": "How scores are calculated",
     "title": "Two reference models",
     "content": "The scores compare your building with two versions of itself: . | Typical Operation Scenario (B) - Your building with standard operating schedules and setpoints. It shows how much of your energy use comes from how the building is operated. The schedules for lighting, equipment, occupancy, HVAC and hot water come from the ASHRAE Standard 90.1-2007 User’s Manual (Appendix G) for the building type. The setpoints are 76 °F cooling and 72 °F heating while the HVAC runs, and 90 °F and 55 °F while it’s off. | Code-Compliant Scenario (C) - Your building built to just meet the selected energy code. It shows how much comes from the building itself: its envelope and equipment. | . On the Benchmark page, your building as it operates today is the Current Building Performance (A). Both scores use a scale where 100 means using no energy and 50 means using exactly as much as the reference scenario. Higher is better. Operational score . | Reference: Typical Operation Scenario (B), using standard (ASHRAE) schedules instead of the actual operating conditions | Formula: Operational score = 100 - 50 × A EUI / B EUI | . Asset score . | Reference: Code-Compliant Scenario (C), with the input parameters changed to meet the selected energy code | Formula: Asset score = 100 - 50 × A EUI / C EUI | . ",
     "url": "/reference/how-scores-are-calculated/#two-reference-models",
     
     "relUrl": "/reference/how-scores-are-calculated/#two-reference-models"
-  },"96": {
+  },"97": {
     "doc": "How scores are calculated",
     "title": "Energy savings",
     "content": "For retrofit projects, the model with the proposed energy conservation measures is compared with the calibrated model. graph TD A[\"Weather-normalized calibrated model (A)\"] A --&gt;|\"Operational Score\"| C[\"Typical Operation Scenario (B)\"] A --&gt;|\"Asset Score\"| D[\"Code-Compliant Scenario (C)\"] subgraph S[\"Benchmarking scores\"] C D end style A fill:#eef3fb,stroke:#0066cc,stroke-width:1.5px,color:#1d1d1f style C fill:#ffffff,stroke:#c7c7cc,stroke-width:1px,color:#1d1d1f style D fill:#ffffff,stroke:#c7c7cc,stroke-width:1px,color:#1d1d1f style S fill:#f2f2f5,stroke:#e3e3e8,color:#424245 . Simplified explanation . | Start with a model based on real data (the calibrated model). | Adjust it for typical weather (weather-normalized). | Create two more models from it: . | one with standard operating schedules, for the operational score | one that meets the energy code, for the asset score | . | Compare the models to see how the building performs against typical operations and against the energy code. | The formulas give higher scores to buildings that use less energy than the reference scenarios. | . ",
     "url": "/reference/how-scores-are-calculated/#energy-savings",
     
     "relUrl": "/reference/how-scores-are-calculated/#energy-savings"
-  },"97": {
+  },"98": {
     "doc": "How scores are calculated",
     "title": "Related",
     "content": ". | Scores - Where the scores appear | Scenarios and the energy use gap - The three scenarios and the gaps between them | . ",
     "url": "/reference/how-scores-are-calculated/#related",
     
     "relUrl": "/reference/how-scores-are-calculated/#related"
-  },"98": {
+  },"99": {
     "doc": "Supported HVAC systems",
     "title": "Supported HVAC systems",
     "content": "The HVAC system types you can choose on the Systems card. | Air Distribution | System types | Implemented | Tested | . | Single Zone | - Packaged Rooftop Air Conditioner (DX) - Single zone DX Unit - AHU (Air handling unit) with chilled water coils | Yes | Yes | . | Packaged VAV | Packaged Rooftop VAV | Yes | Yes | . | Packaged Terminal Unit |   | Yes | Yes | . | AHU VAV | VAV with chilled water coils | Yes | Yes | . | Chilled Beam | AHU VAV with chilled beams | Yes | No | . | Fan Coil-2 Pipes |   | Yes | Yes | . | Fan Coil-4 Pipes |   | Yes | Yes | . | Air-cooled VRF | Air-cooled Variable Refrigerant Flow | Yes | Yes | . | Penthouse DX |   | Yes | Yes | . | Water Source Heat Pump |   | Yes | Yes | . | Multizone - DX |   | Yes | No | . | Multizone - CHW |   | Yes | No | . ",
     "url": "/reference/hvac-systems/",
     
     "relUrl": "/reference/hvac-systems/"
-  },"99": {
+  },"100": {
     "doc": "Supported HVAC systems",
     "title": "Related",
     "content": ". | Systems - Choose the HVAC system | ECM parameters - The measures for each system | . ",
     "url": "/reference/hvac-systems/#related",
     
     "relUrl": "/reference/hvac-systems/#related"
-  },"100": {
+  },"101": {
     "doc": "Reference",
     "title": "Reference",
     "content": "Definitions, methods, supported formats and systems, and recent changes. ",
     "url": "/reference/",
     
     "relUrl": "/reference/"
-  },"101": {
+  },"102": {
     "doc": "Home",
     "title": "How can we help?",
     "content": "Step-by-step guides for calibrating your buildings, reading benchmark results and running energy audits in InverseAudit. Popular: CV(RMSE) Calibration length Interval data Post Cancel subscription From meter data to a posted audit . 1Add a buildingName, address, hourly or monthly data 2Enter dataMeter data, geometry, systems, rates 3CalibrateCheck inputs, then run calibration 4BenchmarkScores and the energy use gap 5SubscribeNeeded for the energy audit 6AuditChoose measures, calculate, update 7PostShare the report and PDFs Browse by task . ✓Start here . What InverseAudit does, what to have ready, and a tour with the Demo Building. | What InverseAudit does | What you need | Quick start with the Demo Building | . ⌂Set up a building . Enter your building's data and calibrate the model. | Upload or enter meter data | Select and edit a footprint | Check inputs and run calibration | . ▥Understand the benchmark . Read the scores and see where the extra energy goes. | ENERGY STAR, operational and asset scores | Scenarios and the energy use gap | AI insights | . ⚙Run an energy audit . Try measures, check savings and payback, post the report. | Summary cards and the ECM Explorer | Calculate, update and post | Costs, payback and incentives | . $Account and billing . Plans, invoices, canceling, and your sign-in and profile. | Subscribe a building | Cancel a subscription | Sign in and your profile | . ☺Share and collaborate . Work with an analyzer and share audits with clients. | Add contacts and clients | Assign an analyzer | What clients see | . When something isn't working . Common problems . | Meter dataMy interval data file won't import | CalibrationCV(RMSE) or NMBE is outside ASHRAE Guideline 14 | Calibration\"Calibration failed\" | BenchmarkNo ENERGY STAR score is shown | Audit\"The report is outdated\" | All troubleshooting | . What's new . | October 2026End-Use Benchmarking opens with the three scenarios and a new Energy Use Gap tab. | October 2026Model fit bars show CV(RMSE) and NMBE against ASHRAE Guideline 14. | October 2026Choose a calibration length: Quick, Standard or Thorough. | All changes | . Reference: Glossary · ECM parameters · How scores are calculated · Supported data formats · Supported HVAC systems . Still stuck? Email support@inversenergy.com and include your building's name. All contacts ",
     "url": "/",
     
     "relUrl": "/"
-  },"102": {
+  },"103": {
     "doc": "Home",
     "title": "Home",
     "content": " ",
     "url": "/",
     
     "relUrl": "/"
-  },"103": {
+  },"104": {
     "doc": "Start here",
     "title": "Start here",
     "content": "What InverseAudit does, what to have ready before you add your first building, and a quick tour with the Demo Building that comes with every account. ",
     "url": "/start/",
     
     "relUrl": "/start/"
-  },"104": {
+  },"105": {
     "doc": "Understand the benchmark",
     "title": "Understand the benchmark",
     "content": "The Benchmarking page shows how your calibrated building performs today and where its energy goes. It compares the building with a typical-operation version and a code-compliant version of the same building, so you can see which end uses to target and how much improvement is possible. For: Everyone the building is shared withWhere: Analysis › Benchmarking . The building is calibrated and pinned on the Home tab. ",
     "url": "/benchmark/",
     
     "relUrl": "/benchmark/"
-  },"105": {
+  },"106": {
     "doc": "Understand the benchmark",
     "title": "What’s on the page",
     "content": "Choose the building at the top of the page. Check the box next to it to open this building by default. | Building facts and model fit - Under the bar at the top: the building type, floor area, address, climate zone and data year, and a strip with how closely the calibrated model matches your meter data. See Read the calibration results. | Scores tab, with three cards: . | ENERGY STAR® score - Your building’s score next to the Portfolio median, a score of 50. See Scores. | Whole-building performance score - The operational score and the asset score. See Scores. | Current performance vs. energy code - Your energy cost compared with a code-compliant version of the building, for the energy code you select. See Scores. | . | End uses tab - End-use benchmarking: the site EUI of the three compared scenarios, the energy use gap by end use, the end-use score tables and two charts. See Scenarios and the energy use gap. | . For the building’s analyzer, each section has an AI analysis button that writes a short analysis of it, and Run AI analysis at the top runs them all. See AI insights. The building facts show the gross floor area you entered. If the modeled floor area (the footprint times the number of stories) is different, it is shown in parentheses. The EUIs on the Benchmark page use the modeled floor area. ",
     "url": "/benchmark/#whats-on-the-page",
     
     "relUrl": "/benchmark/#whats-on-the-page"
-  },"106": {
+  },"107": {
     "doc": "Understand the benchmark",
     "title": "Download a PDF",
     "content": "Click Download PDF at the top of the page. The PDF is a benchmarking report for the selected building: . | the building’s facts and the model fit against ASHRAE Guideline 14 | the Scores tab: the ENERGY STAR score with its metrics, the operational and asset scores, and the energy cost against the energy code | the End uses tab: the three scenarios, the energy use gap by end use, the end-use EUI chart, the end-use performance tables with their score shading key, and the end-use scores as a bar chart | . Each section’s text is printed as the page shows it. If an AI analysis is out of date, the button’s tooltip says so: its numbers may not match the results, so the analyzer can run Run AI analysis first. ",
     "url": "/benchmark/#download-a-pdf",
     
     "relUrl": "/benchmark/#download-a-pdf"
-  },"107": {
+  },"108": {
     "doc": "Understand the benchmark",
     "title": "If the page is empty",
     "content": "The page lists your calibrated buildings that are pinned on Home. When there are none, it says why and links to the next step: . | No building yet - Add a building opens the new building form on Home. | No building calibrated yet - Each building is listed with how far its setup is, and Continue opens it on Home. | Calibrated buildings that aren’t pinned - Pin buildings on Home opens the Buildings tab, where you pin them. | . Energy Auditing works the same way. ",
     "url": "/benchmark/#if-the-page-is-empty",
     
     "relUrl": "/benchmark/#if-the-page-is-empty"
-  },"108": {
+  },"109": {
     "doc": "Share and collaborate",
     "title": "Share and collaborate",
     "content": "Work on a building with an analyzer, and share posted audits with your clients. ",
     "url": "/share/",
     
     "relUrl": "/share/"
-  },"109": {
+  },"110": {
     "doc": "Share and collaborate",
     "title": "Roles",
     "content": "| Role | Who | What they can do | . | Subscriber | The person who created the building, or the new owner after a transfer | Assign the analyzer, transfer ownership, subscribe and cancel the subscription. The subscriber is also the analyzer until they assign someone else. | . | Analyzer | The subscriber, or a contact the subscriber assigned | Enter data, run the calibration, change measures, calculate, update and post the audit. | . | Client | A contact at the client company the building is assigned to | View posted audits and download the full report. | . Anyone else who opens a building sees it in view-only mode. ",
     "url": "/share/#roles",
     
     "relUrl": "/share/#roles"
-  },"110": {
+  },"111": {
     "doc": "Account and billing",
     "title": "Account and billing",
     "content": "Plans, subscribing a building, invoices and canceling. ",
     "url": "/account/",
     
     "relUrl": "/account/"
-  },"111": {
+  },"112": {
     "doc": "Account and billing",
     "title": "Plans",
     "content": "Each building is subscribed separately. You can benchmark a calibrated building without a subscription, but the energy audit and its reports require one. | Professional Billed Monthly and Professional Billed Yearly - Start with a 3-day free trial and renew automatically until you cancel. | All-In-One Plan - Billed one time. | . ",
     "url": "/account/#plans",
     
     "relUrl": "/account/#plans"
-  },"112": {
+  },"113": {
     "doc": "Set up a building",
     "title": "Set up a building",
     "content": "Add your building, complete its four data cards in any order, then run the calibration. The result is the building’s baseline: its calibrated energy model. Building status . The Building status box on the Pinned tab counts your pinned buildings at each stage: Setup (New building, Preparing data and Ready to calibrate), Audit (Audit in progress and Audit posted) and Tracking (Tracking savings). Each pinned building’s card also shows its own status: . | Preparing data - Data entry or the calibration isn’t finished yet, or a saved change needs a new calibration. | Audit in progress - The building is calibrated and ready for benchmarking and the energy audit. An unposted audit shows this status too. | Audit posted with a date - The audit report has been posted. | . An orange Outdated model label means the building was calibrated with an older version of the calibration engine. Rerun the calibration for better results. ",
     "url": "/baseline/",
     
     "relUrl": "/baseline/"
-  },"113": {
+  },"114": {
     "doc": "Set up a building",
     "title": "The Home tab",
     "content": ". | Pinned buildings - The buildings you’re working on, each with its four data cards. Pin or unpin a building with the Pin switch on the Buildings tab, or choose Unpin in the card’s ⋮ menu. Benchmarking, Energy Auditing and Portfolio list only pinned buildings. | View on Map - Shows your buildings on a map. | Buildings tab - All your buildings, with their status, meter data type, analyzer and subscription, and links to Benchmark, Audit and Edit. The Audit link works for pinned, subscribed buildings. | . ",
     "url": "/baseline/#the-home-tab",
     
     "relUrl": "/baseline/#the-home-tab"
-  },"114": {
+  },"115": {
     "doc": "Set up a building",
     "title": "The Building setup panel",
     "content": "Click a pinned building’s card to open it in the Building setup panel on the right. | Building - Check inputs, then run the calibration. While it runs, the button shows Preprocessing and then Calibration in progress with a percentage. The Issues tab lists errors and warnings from the input check; the Stats tab shows the calibration results. See Check inputs and run calibration. | Team - The analysis team. Assign or remove the analyzer and transfer ownership. See Roles and the analyzer. | Subscription - Add the building to your subscription list, or cancel its subscription. See Subscribe a building. | Help - Links to support. | . ",
     "url": "/baseline/#the-baseline-controller",
     
     "relUrl": "/baseline/#the-baseline-controller"
-  },"115": {
+  },"116": {
     "doc": "Run an energy audit",
     "title": "Run an energy audit",
     "content": "The Energy Auditing page is where you apply energy conservation measures (ECMs) to the calibrated model, see the savings and costs, and produce the audit report. For: Analyzer (others: view-only)Where: Analysis › Energy Auditing . | The building is calibrated and pinned on Home. The list at the top of the page shows only pinned buildings. | The building is subscribed. Without a subscription, the page shows “Not subscribed: audit reports and energy analysis are limited for this building” and a Subscribe button. | Only the building’s analyzer can change measures and post the report. Everyone else sees the page in view-only mode. | . Choose the building at the top of the page. Check the box next to it to open this building by default. ",
     "url": "/audit/",
     
     "relUrl": "/audit/"
-  },"116": {
+  },"117": {
     "doc": "Run an energy audit",
     "title": "Summary cards",
     "content": "The four cards at the top of the page summarize the selected measures. Each card has a Chart button (the bar icon) for details and a Manage button (⋯) for its settings. | Score - Your building’s score before and after the retrofit. Under Manage, choose which score to show: ENERGY STAR score, ENERGY STAR site EUI, operational score or asset score. | Cost savings - The post-retrofit cost savings, and how the building compares with the energy code baseline. Under Manage, choose the energy code baseline. Recalculating takes up to 10 seconds. | Payback period - The simple payback of the selected measures without incentives, and the number of measures selected. Under Manage, see whether a project cost dataset is available for the audit year. Costs come from your own retrofit costs table or the standard dataset; see Costs, payback and incentives. | Net project budget - The retrofit cost after utility incentives, and the number of incentives found. Under Manage, choose the incentive method: Measure-based or Whole building. | . The Score and Cost savings cards change when you click Calculate. The payback period uses the costs from your last Update, and the number of measures and the Net project budget change only when you click Update. ",
     "url": "/audit/#summary-cards",
     
     "relUrl": "/audit/#summary-cards"
-  },"117": {
+  },"118": {
     "doc": "Run an energy audit",
     "title": "Measures panel",
     "content": "The Measures panel on the right (called ECM Explorer before October 2026) lists the measures you can apply, in groups: Envelope, Space use, Operations, Air-side, Cooling plant, Heating plant, Domestic hot water, Solar PV and Electrification. Groups that don’t apply to your building are not shown. A key under the groups explains the colored dots: . | Existing - Your building as calibrated. | Energy code - What the selected energy code requires. A row without a code value shows only Existing and Customized. | Customized - A value you set in this panel. | . Stars next to a measure show its priority from the AI analysis (more stars mean a higher priority). To generate them, choose Run AI analysis › All sections on Benchmarking. See the ECM parameter reference for what each parameter means. The top of the Measures panel shows the savings of your last calculation and the total energy cost after the retrofit. For a guided tour, click the ? button in the panel’s title bar. ",
     "url": "/audit/#ecm-explorer",
     
     "relUrl": "/audit/#ecm-explorer"
-  },"118": {
+  },"119": {
     "doc": "Troubleshooting",
     "title": "Troubleshooting",
     "content": "Find the problem you see, then follow the link to the fix. ",
     "url": "/troubleshooting/",
     
     "relUrl": "/troubleshooting/"
-  },"119": {
+  },"120": {
     "doc": "Troubleshooting",
     "title": "Meter data",
     "content": ". | My interval data file won’t import - Check the format, coverage and missing hours. | The annual electricity use looks doubled or halved - The kW and kWh units are mixed up. | Some readings don’t represent actual energy use - Exclude them as missing data. | . ",
     "url": "/troubleshooting/#meter-data",
     
     "relUrl": "/troubleshooting/#meter-data"
-  },"120": {
+  },"121": {
     "doc": "Troubleshooting",
     "title": "Building data",
     "content": ". | My building isn’t on the map - Use a nearby footprint and edit it. | My building is in Canada - Draw the footprint yourself. | My utility rate isn’t listed - Use an average rate, and ask us to add yours. | My building went back to “Preparing data” - A saved change to its inputs needs a new calibration. Check inputs and run it again. | . ",
     "url": "/troubleshooting/#baseline-data",
     
     "relUrl": "/troubleshooting/#baseline-data"
-  },"121": {
+  },"122": {
     "doc": "Troubleshooting",
     "title": "Calibration",
     "content": ". | The Check inputs button is grayed out | I need to stop a calibration | CV(RMSE) or NMBE is outside ASHRAE Guideline 14 | “Calibration failed” | An “Outdated model” label is shown - Rerun the calibration. | . ",
     "url": "/troubleshooting/#calibration",
     
     "relUrl": "/troubleshooting/#calibration"
-  },"122": {
+  },"123": {
     "doc": "Troubleshooting",
     "title": "Benchmark",
     "content": ". | My building isn’t in the list - Only pinned, calibrated buildings are listed. Pin it on the Buildings tab. | No ENERGY STAR score is shown - Some building types aren’t covered by ENERGY STAR. | I can’t change the energy code - Only the building’s analyzer can. | “The AI analysis didn’t finish” | . ",
     "url": "/troubleshooting/#benchmark",
     
     "relUrl": "/troubleshooting/#benchmark"
-  },"123": {
+  },"124": {
     "doc": "Troubleshooting",
     "title": "Energy audit",
     "content": ". | My building isn’t in the list - Only pinned, calibrated buildings are listed. | “Not subscribed” or “Complete Your Energy Audit” - Subscribe the building. | “The report is outdated” | Calculate shows an error | Calculate is grayed out | Update or Post is grayed out - Calculate and Update first. | . ",
     "url": "/troubleshooting/#energy-audit",
     
     "relUrl": "/troubleshooting/#energy-audit"
-  },"124": {
+  },"125": {
     "doc": "Troubleshooting",
     "title": "Sharing",
     "content": ". | The client doesn’t see the audit | Download PDF says the full report isn’t available to a client | . ",
     "url": "/troubleshooting/#sharing",
     
     "relUrl": "/troubleshooting/#sharing"
-  },"125": {
+  },"126": {
     "doc": "Troubleshooting",
     "title": "Costs and incentives",
     "content": ". | There’s no Save changes button on Retrofit Costs - The standard dataset can’t be edited. Create your own table. | Incentives can’t be applied - Incentives need a utility rate, not an average rate. | My utility’s incentives are missing - Contact us from the Utility Incentives page. | A newly posted building isn’t in the Portfolio totals - Turn on its switch. | . ",
     "url": "/troubleshooting/#costs-and-incentives",
     
     "relUrl": "/troubleshooting/#costs-and-incentives"
-  },"126": {
+  },"127": {
     "doc": "Troubleshooting",
     "title": "Account and billing",
     "content": ". | My total is over $2,400 - Subscribe the buildings in two payments. | Cancel subscription is grayed out - Only the subscriber (the building’s owner) can cancel. | I forgot my password | I can’t see the audits shared with me - Sign in as a client with the invited email. | . Still stuck? Contact support. ",
     "url": "/troubleshooting/#account-and-billing",
     
     "relUrl": "/troubleshooting/#account-and-billing"
-  },"127": {
+  },"128": {
     "doc": "Meter data",
     "title": "Meter data",
     "content": "The calibration matches the model to your meter data, so its quality decides how accurate the results are. For: AnalyzerWhere: Home › Meter Data card . You have 12 months of meter data (13 months of interval data is recommended): an interval data file for buildings with hourly data, or monthly bills for buildings with monthly data. See Supported data formats. ",
     "url": "/baseline/meter-data/",
     
     "relUrl": "/baseline/meter-data/"
-  },"128": {
+  },"129": {
     "doc": "Meter data",
     "title": "Steps",
     "content": ". | On Home, click the building’s Meter data card. | Add the electricity data: . | Hourly data - On the first tab, Import files, drop your interval data file into the upload area and click Import and fill meter data. InverseAudit recognizes the file’s format automatically. The Electricity (hourly data) tab then shows a monthly summary and the data quality checks. | Monthly data - Complete the required fields for each month on Electricity (monthly data), or import your bills on the first tab, Import bills. | . | Enter monthly natural gas or fuel oil use on the Natural gas / fuel oil tab. See Natural gas and fuel oil. If the building uses district chilled water or steam, upload its 60-minute data on the Chilled water or Steam tab. | Click Save changes. | . On a calibrated building, uploading or importing new data, or saving changed values, sends the building back to preparation. Check inputs and run the calibration again afterwards. Saving without changes keeps the calibration. ",
     "url": "/baseline/meter-data/#steps",
     
     "relUrl": "/baseline/meter-data/#steps"
-  },"129": {
+  },"130": {
     "doc": "Meter data",
     "title": "What you’ll see next",
     "content": "The Meter data card no longer shows Pending. When all four cards are done, check inputs and run the calibration. ",
     "url": "/baseline/meter-data/#what-youll-see-next",
     
     "relUrl": "/baseline/meter-data/#what-youll-see-next"
-  },"130": {
+  },"131": {
     "doc": "Meter data",
     "title": "Import utility bills with AI",
     "content": "The first tab can fill in the fields for you. Upload your utility bills (and, for buildings with hourly data, your interval data file) and click Import and fill monthly data (buildings with monthly data, tab Import bills) or Import and fill meter data (buildings with hourly data, tab Import files). Check the values on the other tabs before you save. The import reads each bill’s usage, peak demand and total cost. The costs set your utility rates: see Rates from your bills. You can upload up to 50 files of up to 40 MB each: PDF, JPG, PNG, XLS, XLSX, CSV, TXT or XML (Green Button), with at most two CSV or TXT files and one Excel file. Importing again overwrites the data on the other tabs. ",
     "url": "/baseline/meter-data/#import-utility-bills-with-ai",
     
     "relUrl": "/baseline/meter-data/#import-utility-bills-with-ai"
-  },"131": {
+  },"132": {
     "doc": "Meter data",
     "title": "Natural gas and fuel oil",
-    "content": "Enter each month’s use on the Natural gas / fuel oil tab: therms for natural gas, gallons for fuel oil. Purchased steam without a meter file is entered here too, in MMBtu. The two options beside the table decide how the calibration uses these bills: . | No natural gas or fuel oil - Sets every month to 0. Tick it only when the building uses neither. If the building heats with gas and you leave its bills out, its heating isn’t calibrated. | Bills are actual meter readings - Tick it when every bill is an actual reading, with no estimated, skipped or combined months. The calibration then compares each month’s bill with the model, against ASHRAE Guideline 14. Left unticked, it fits the year’s total. This option isn’t offered for fuel oil, whose deliveries don’t follow the months. | . Utilities sometimes skip a month’s reading and bill it with the next one. Enter 0 for the skipped month, not an estimate, and leave Bills are actual meter readings unticked: the year’s total is still right, so the calibration isn’t misled. With the option ticked, Check Inputs warns about a month billed 0 between two months with gas. The calibration weighs electricity more than gas: gas counts for at most a quarter of the score. Gas bills are usually further from anything a model can match than electricity. The audit report’s Appendix A states whether the gas was calibrated to each month or to the year’s total. ",
+    "content": "Enter each month’s use on the Natural gas / fuel oil tab: therms for natural gas, gallons for fuel oil. Purchased steam without a meter file is entered here too, in MMBtu. The two options beside the table decide how the calibration uses these bills: . | No natural gas or fuel oil - Sets every month to 0. Tick it only when the building uses neither. If the building heats with gas and you leave its bills out, its heating isn’t calibrated. | Bills are actual meter readings - Tick it when every bill is an actual reading, with no estimated, skipped or combined months. The calibration then compares each month’s bill with the model, against ASHRAE Guideline 14. Left unticked, it fits the year’s total. This option isn’t offered for fuel oil, whose deliveries don’t follow the months: fuel oil is fitted on the year’s total. | . Utilities sometimes skip a month’s reading and bill it with the next one. Enter 0 for the skipped month, not an estimate, and leave Bills are actual meter readings unticked: the next bill makes up the skipped month, so the year’s total is still right and the calibration isn’t misled. With the option ticked, Check Inputs warns about a month billed 0 between two months with gas. The calibration weighs electricity more than gas: gas counts for at most a quarter of the score, and the gas counts as matched when the year’s total is within 5% (each month’s CV(RMSE) within 15% when the bills are actual meter readings). Gas bills are usually further from anything a model can match than electricity. The audit report’s Appendix A states how the gas was calibrated. ",
     "url": "/baseline/meter-data/#natural-gas-and-fuel-oil",
     
     "relUrl": "/baseline/meter-data/#natural-gas-and-fuel-oil"
-  },"132": {
+  },"133": {
+    "doc": "Meter data",
+    "title": "Time stamps and daylight saving time",
+    "content": "An interval data file is timed either by the clock, which moves an hour for daylight saving time, or in standard time all year. The calibration lines the model’s hours up with the readings, so it needs to know which. The Time stamps box on the Electricity (hourly data) tab shows what InverseAudit found, and you can change it: . | Detect from the readings - InverseAudit compares the building’s weekday start and stop in the weeks before and after each clock change. If they stay at the same hours, the readings follow the clock; if they move an hour, they’re in standard time. Readings without a clear working day are taken as following the clock, as most utilities’ files are. Leave Green Button files on this choice: they’re moved to standard time when imported. | Follow the clock (daylight saving time) or Standard time all year - Choose one when you know how your utility times its files. | . The box appears only where the clocks change. Your choice is kept when you import the interval data again. Changing it sends the building back to preparation, so run the calibration again. ",
+    "url": "/baseline/meter-data/#time-stamps-and-daylight-saving-time",
+    
+    "relUrl": "/baseline/meter-data/#time-stamps-and-daylight-saving-time"
+  },"134": {
     "doc": "Meter data",
     "title": "Missing data and outliers",
     "content": "Treat readings that don’t represent actual energy use as missing data. Up to 2,500 hours of data points can be missing, and the data must cover at least 9 months. To exclude readings, edit the file in Excel or any text editor and either: . | remove the entire row, including the date, or | fill the readings with zeros or blanks, keeping the dates. | . The examples below are all acceptable in a CSV (comma-separated values) file. For Green Button data, use an XML editor. . ",
     "url": "/baseline/meter-data/#missing-data-and-outliers",
     
     "relUrl": "/baseline/meter-data/#missing-data-and-outliers"
-  },"133": {
+  },"135": {
     "doc": "Meter data",
     "title": "If something goes wrong",
-    "content": "My interval data file won't import Check that the file matches one of the supported data formats, and that it covers at least 9 months with no more than 2,500 missing hours. If it still won’t import, contact support and attach the file. The annual electricity use looks doubled or halved The file’s unit was probably read as kW instead of kWh, or the other way around. Put the unit in the file as described in Supported data formats. ",
+    "content": "My interval data file won't import Check that the file matches one of the supported data formats, and that it covers at least 9 months with no more than 2,500 missing hours. If it still won’t import, contact support and attach the file. The annual electricity use looks doubled or halved The file’s unit was probably read as kW instead of kWh, or the other way around. Put the unit in the file as described in Supported data formats. In summer, the model's hours are an hour off the readings On the calibration’s heat map, the calibrated model’s working day starts an hour earlier or later than the measured one while daylight saving time is on. Set Time stamps on the Electricity (hourly data) tab to how your utility times its files, save, and run the calibration again. See Time stamps and daylight saving time. ",
     "url": "/baseline/meter-data/#if-something-goes-wrong",
     
     "relUrl": "/baseline/meter-data/#if-something-goes-wrong"
-  },"134": {
+  },"136": {
     "doc": "Meter data",
     "title": "Related",
     "content": ". | Supported data formats - Green Button and CSV layouts, kW vs kWh | Check inputs and run calibration - After all four cards are done | . ",
     "url": "/baseline/meter-data/#related",
     
     "relUrl": "/baseline/meter-data/#related"
-  },"135": {
+  },"137": {
     "doc": "Quick start with the Demo Building",
     "title": "Quick start with the Demo Building",
     "content": "Every new account includes a Demo Building: an office building with a year of hourly electricity data, already calibrated. Use it to see the whole workflow before you enter your own building. For: New usersTakes: About 20 minutesWhere: Home, then Analysis . You’re signed in. You don’t need any data of your own yet. ",
     "url": "/start/quick-start/",
     
     "relUrl": "/start/quick-start/"
-  },"136": {
+  },"138": {
     "doc": "Quick start with the Demo Building",
     "title": "Steps",
     "content": ". | Pin it. On Home, look under Pinned buildings. If the Demo Building isn’t there, open the Buildings tab and turn on its Pin switch. Benchmarking and Energy Auditing only list pinned buildings. | Look at the inputs. Click the Demo Building’s four cards: Meter data, Geometry, Systems and Rates. Each opens the window you’ll fill in for your own building. Close each one with Close or Cancel to keep the demo as it is. | Check the calibration. Click the Demo Building’s card, then open the Stats tab in the Building setup panel. CV(RMSE) and NMBE show how closely the model matches the meter data, and both are within the ASHRAE Guideline 14 limits. | Open the benchmark. In the left menu, choose Analysis › Benchmarking, then pick the Demo Building at the top. Read its scores, then the End uses tab to see how much energy it uses above a code-compliant version of itself. | Try some measures. Choose Analysis › Energy Auditing. In the Measures panel, each parameter shows the building’s existing value next to the energy code value. Change a few values, for example the roof R-value or the lighting power density, and click Calculate to see the savings. | Update the report. Click Update to refresh the report with the new results, then read the Summary, Analysis and Recommendations tabs. Updating runs a simulation for each measure and can take several minutes. | . The Demo Building is already calibrated. Don’t click Calibration complete in the Building setup panel: rerunning the calibration deletes its benchmark and energy audit results. ",
     "url": "/start/quick-start/#steps",
     
     "relUrl": "/start/quick-start/#steps"
-  },"137": {
+  },"139": {
     "doc": "Quick start with the Demo Building",
     "title": "What you’ll see next",
     "content": "The summary cards at the top of the Energy Auditing page show the new site EUI, cost savings, payback and net project budget. You can change the measures and calculate again as often as you like. There’s no need to Post the Demo Building, since posting shares a report with your clients. When you’re ready, add your own building. Check What you need first. ",
     "url": "/start/quick-start/#what-youll-see-next",
     
     "relUrl": "/start/quick-start/#what-youll-see-next"
-  },"138": {
+  },"140": {
     "doc": "Quick start with the Demo Building",
     "title": "Related",
     "content": ". | Check inputs and run calibration - What the Stats tab shows | Understand the benchmark - Scores and the energy use gap | Summary cards and the Measures panel - The Energy Auditing page | Calculate, update and post - The full audit workflow | . ",
     "url": "/start/quick-start/#related",
     
     "relUrl": "/start/quick-start/#related"
-  },"139": {
+  },"141": {
     "doc": "Rates",
     "title": "Rates",
     "content": "Select the utility rates, so costs, demand charges and incentives are calculated correctly. For: AnalyzerWhere: Home › Rates card . ",
     "url": "/baseline/rates/",
     
     "relUrl": "/baseline/rates/"
-  },"140": {
+  },"142": {
     "doc": "Rates",
     "title": "Steps",
     "content": ". | On Home, click the building’s Rates card to open Utility rates. | Select your utility and service rate for each energy source. If your utility’s rates aren’t available, use the rate from your bills, the default average rate we offer, or your own average rate. The note under each rate says where it comes from. | Click Save changes. | . On a calibrated building, saving changed rates sends the building back to preparation. Check inputs and run the calibration again afterwards. ",
     "url": "/baseline/rates/#steps",
     
     "relUrl": "/baseline/rates/#steps"
-  },"141": {
+  },"143": {
     "doc": "Rates",
     "title": "What you’ll see next",
     "content": "The Rates card no longer shows Pending. When all four cards are done, check inputs and run the calibration. ",
     "url": "/baseline/rates/#what-youll-see-next",
     
     "relUrl": "/baseline/rates/#what-youll-see-next"
-  },"142": {
+  },"144": {
     "doc": "Rates",
     "title": "Rates from your bills",
     "content": "When you import your bills with AI, the import reads each bill’s total cost. With costs for at least 6 months, each rate becomes the bills’ average cost per unit: total cost divided by total use. | Importing bills sets every rate the bills give. It replaces a rate you typed and a utility provider you picked, and the Rates card shows Pending again so you can review it. | Saving the meter data updates only the rates that already come from the bills. | Picking a provider again - The rate note offers Use the bills’ rate to go back to the bills. | . A rate from the bills is an average, so like the average rates below it has no demand charges. Pick your utility provider for its exact rate schedule, with demand charges and seasons. Check Inputs warns when a rate you entered is more than 25% off what the bills cost. Savings are priced at the rate on this card, so a rate far from the bills misprices them. ",
     "url": "/baseline/rates/#rates-from-your-bills",
     
     "relUrl": "/baseline/rates/#rates-from-your-bills"
-  },"143": {
+  },"145": {
     "doc": "Rates",
     "title": "Average rates",
     "content": "With average rates you can still analyze your building, but demand cost savings and utility incentives aren’t calculated. If you can’t find the rate structure you want to use, or you find large discrepancies in a calibrated model, send us your utility name and service rate through Contact support. Your rate will usually be available within a couple of days, and we will let you know when it is ready. ",
     "url": "/baseline/rates/#average-rates",
     
     "relUrl": "/baseline/rates/#average-rates"
-  },"144": {
+  },"146": {
     "doc": "Rates",
     "title": "Related",
     "content": ". | Check inputs and run calibration - When all four cards are done | . ",
     "url": "/baseline/rates/#related",
     
     "relUrl": "/baseline/rates/#related"
-  },"145": {
+  },"147": {
     "doc": "Reports and PDFs",
     "title": "Reports and PDFs",
     "content": "The audit report is built from your calculations and can be downloaded as PDF, in full or by section. Where: Energy Auditing, the report tabs and Download PDF . ",
     "url": "/audit/reports/",
     
     "relUrl": "/audit/reports/"
-  },"146": {
+  },"148": {
     "doc": "Reports and PDFs",
     "title": "The report tabs",
     "content": ". | Summary - Executive Summary and Performance Scores. | Analysis - End-use Analysis, Monthly Costs and Usage, Retrofit Measures, Low-cost Measures, Renewable Energy (when solar PV is included) and Utility Rates. | Recommendations - Energy Conservation Measures and, for US buildings, Carbon Impact of ECMs. | Utility analysis - Utility Consumption, Electricity Consumption and Electricity End-use. Available after the audit is posted. | Site visit - Only with an ASHRAE Level 1 or Level 2 report: the qualified energy auditor’s entries. | . ",
     "url": "/audit/reports/#the-report-tabs",
     
     "relUrl": "/audit/reports/#the-report-tabs"
-  },"147": {
+  },"149": {
     "doc": "Reports and PDFs",
     "title": "The recommendations table",
     "content": "On the Recommendations tab, each row is one measure, calculated on its own, so the rows don’t add up to the totals on the Summary tab. | Column | Meaning | . | Electricity kWh and kW, Natural Gas therm, Fuel Oil gal, Chilled Water MBtu, Steam MBtu, Water kGal | Annual savings by energy source | . | Cost Savings (A) | Annual cost savings | . | Retrofit Costs (B) | The cost of the measure. See Costs, payback and incentives. | . | Utility Incentives (C) | Incentives found for the measure | . | Net Costs (B-C) | Shown when there are incentives | . | Payback | B ÷ A, or (B - C) ÷ A when there are incentives | . | SIR | Annual cost savings × expected life ÷ net cost. Above 1 means the measure pays for itself over its life. | . In the PDF, the Recommendations section opens with the Energy efficiency measure summary instead. Each measure has its description, energy cost savings, peak kW and energy savings, cost, incentives, life, net cost, simple ROI and payback. Low-cost and no-cost measures (net cost under $5,000) are listed before capital measures. The table ends with the totals of the measures one at a time and with all measures together, the package run. It has no SIR column. The ASHRAE reports use the same table, with the auditor’s non-energy cost savings. ",
     "url": "/audit/reports/#the-recommendations-table",
     
     "relUrl": "/audit/reports/#the-recommendations-table"
-  },"148": {
+  },"150": {
     "doc": "Reports and PDFs",
     "title": "Edit the report text",
     "content": "The analyzer can change the text of each report section. Click Edit above the text, or double-click the text, make your changes with the toolbar, then click Save (or press Ctrl+S). One text is open at a time. Cancel (or Esc) closes it without saving, and asks first if you changed it. Reset text removes the text from the report. If the text can’t be saved, it stays open with the reason; Copy text copies it so your changes aren’t lost. While the audit is posted, the text is read-only until you unpost it. Update keeps your edits. Run AI analysis rewrites the text of every section and replaces them. ",
     "url": "/audit/reports/#edit-the-report-text",
     
     "relUrl": "/audit/reports/#edit-the-report-text"
-  },"149": {
+  },"151": {
     "doc": "Reports and PDFs",
     "title": "Download a PDF",
     "content": ". | Click Update first, so the PDF includes the latest results. | Click Download PDF at the top of the page. | Choose Full report, Cover page, Executive summary, Analysis, Recommendations, Utility analysis, for US buildings Appendix A: ESG/carbon, Appendix B: Carbon impact of measures, or, once savings tracking has measured a year, Measured savings. | . With an ASHRAE Level 1 or Level 2 report, the menu has Cover and compliance instead of Cover page, and also Site visit and facility, but not Appendix B. Full report says how many site visit items are still open. The file’s name starts with the report type, InverseAudit, ASHRAE Level 1 or ASHRAE Level 2, then the part and the building, for example ASHRAE Level 2 Summary_Demo Building_20261103.pdf. Measured savings keeps its own name, MeasuredSavings_. ",
     "url": "/audit/reports/#download-a-pdf",
     
     "relUrl": "/audit/reports/#download-a-pdf"
-  },"150": {
+  },"152": {
     "doc": "Reports and PDFs",
     "title": "Related",
     "content": ". | Calculate, update and post - Refresh the report before downloading | The ASHRAE Level 1 and Level 2 reports - The reports for programs that ask for an ASHRAE Standard 211 audit | . ",
     "url": "/audit/reports/#related",
     
     "relUrl": "/audit/reports/#related"
-  },"151": {
+  },"153": {
     "doc": "Roles and the analyzer",
     "title": "Roles and the analyzer",
     "content": "The subscriber decides who runs the analysis on a building, and can hand the building over to someone else. For: SubscriberWhere: Home › Building setup › Team . | The person is in your contacts. | They have an InverseAudit account with that email. If not, invite them. | . ",
     "url": "/share/roles/",
     
     "relUrl": "/share/roles/"
-  },"152": {
+  },"154": {
     "doc": "Roles and the analyzer",
     "title": "Assign an analyzer",
     "content": ". | On Home, click the building’s card, then open the Team tab in the Building setup panel. | Click Assign Analyzer, choose the contact under Select a contact, and click Confirm. | . The contact becomes the analyzer and gets an email about it. The Analysis Team list shows you as Subscriber and them as Analyzer. From then on, only the analyzer can edit the building’s data, run the calibration and work on the energy audit. You see those parts in view-only mode. ",
     "url": "/share/roles/#assign-an-analyzer",
     
     "relUrl": "/share/roles/#assign-an-analyzer"
-  },"153": {
+  },"155": {
     "doc": "Roles and the analyzer",
     "title": "Remove the analyzer",
     "content": "In the Analysis Team list, open the … menu next to the analyzer and choose Remove, then confirm with Remove Analyzer. You become the analyzer again and have full access. ",
     "url": "/share/roles/#remove-the-analyzer",
     
     "relUrl": "/share/roles/#remove-the-analyzer"
-  },"154": {
+  },"156": {
     "doc": "Roles and the analyzer",
     "title": "Transfer ownership",
     "content": ". | On the Team tab, click Transfer Ownership. | In the dialog, choose the New owner from your contacts, then click Transfer Ownership. | . The new owner also becomes the analyzer. You lose access to the building, it is no longer shared with its client, and only the new owner can transfer it back. ",
     "url": "/share/roles/#transfer-ownership",
     
     "relUrl": "/share/roles/#transfer-ownership"
-  },"155": {
+  },"157": {
     "doc": "Roles and the analyzer",
     "title": "Related",
     "content": ". | Contacts and clients | Cancel a subscription - Only the subscriber can cancel | . ",
     "url": "/share/roles/#related",
     
     "relUrl": "/share/roles/#related"
-  },"156": {
+  },"158": {
     "doc": "Scores",
     "title": "Scores",
     "content": "What the ENERGY STAR, operational and asset scores and the energy cost comparison mean, and how to read them. For: Everyone with access to the buildingWhere: Analysis › Benchmarking . On this page . | ENERGY STAR score | Operational and asset scores | Energy cost vs. energy code | Related | . ",
     "url": "/benchmark/scores/",
     
     "relUrl": "/benchmark/scores/"
-  },"157": {
+  },"159": {
     "doc": "Scores",
     "title": "ENERGY STAR score",
     "content": "The ENERGY STAR score rates your building’s overall energy performance on a 1 to 100 scale, reflecting its physical assets, how it’s operated and how it’s used. A score of 50 is the median: lower is worse than similar buildings nationwide, and higher is better. It helps you decide which buildings to improve first.1 . The card shows your building’s score and site EUI next to the portfolio median (a score of 50) and its site EUI. The site EUI uses the modeled floor area, so it matches the calibrated model. If the model changes, for example after you rerun the calibration, the score is recalculated the next time you open the page. To calculate the score for a different property type, choose it under ENERGY STAR property type and click the refresh button next to it. Some building types aren’t covered by ENERGY STAR Portfolio Manager, and no score is shown for them. ",
     "url": "/benchmark/scores/#energy-star-score",
     
     "relUrl": "/benchmark/scores/#energy-star-score"
-  },"158": {
+  },"160": {
     "doc": "Scores",
     "title": "Operational and asset scores",
     "content": "The operational score and the asset score work like the ENERGY STAR score: 50 means the same energy use as the reference, a lower score is worse, and a higher score is better. Both compare your building with a version of itself rather than with other buildings. | Operational score - Compares the calibrated model with the same building run on typical schedules based on ASHRAE standards. For example, if an office building runs longer than the typical Monday to Friday, 8 am to 5 pm schedule, its operational score is lower than 50. Operational score = 100 - 50 × A / B | Asset score - Similar to the miles-per-gallon (MPG) rating used for cars. It compares the calibrated model with the same building built to the selected energy code (ASHRAE Standard 90.1): roof and exterior wall insulation, window U-values and SHGC, and heating and cooling efficiencies. Asset score = 100 - 50 × A / C | . A, B and C are the three compared scenarios. Scores range from 0 to 100. The scores are calculated with weather-normalized models, which use typical weather (TMY3) in place of the actual weather data. See How scores are calculated. ",
     "url": "/benchmark/scores/#operational-and-asset-scores",
     
     "relUrl": "/benchmark/scores/#operational-and-asset-scores"
-  },"159": {
+  },"161": {
     "doc": "Scores",
     "title": "Energy cost vs. energy code",
     "content": "Current performance vs. energy code shows how much higher or lower your building’s energy cost is than the code-compliant scenario, and how the current energy cost is split between energy sources. To compare with a different code, click the energy code’s name and choose another one. The results are recalculated, which can take up to 10 seconds. The code currently in force in your state is tagged Current State Code. Only the building’s analyzer can change the code. ",
     "url": "/benchmark/scores/#energy-cost-vs-energy-code",
     
     "relUrl": "/benchmark/scores/#energy-cost-vs-energy-code"
-  },"160": {
+  },"162": {
     "doc": "Scores",
     "title": "Related",
     "content": ". | Scenarios and the energy use gap - Where the extra energy goes | How scores are calculated - The models behind the scores | . | www.energystar.gov. &#8617; . | . ",
     "url": "/benchmark/scores/#related",
     
     "relUrl": "/benchmark/scores/#related"
-  },"161": {
+  },"163": {
     "doc": "Sign in and your profile",
     "title": "Sign in and your profile",
     "content": "How to sign in as an energy professional or as a client, and where to change your profile, email and password. For: EveryoneWhere: Sign-in page, and your name at the top right . ",
     "url": "/account/sign-in-and-profile/",
     
     "relUrl": "/account/sign-in-and-profile/"
-  },"162": {
+  },"164": {
     "doc": "Sign in and your profile",
     "title": "Sign in",
     "content": ". | On the sign-in page, choose how you’ll use InverseAudit: . | I’m reviewing an audit report - View the energy audits shared with you. Choose this if you’re a client. | I’m an energy professional - Add buildings and run energy audits. | . | Enter your email and password and click Sign in. | . The same account can sign in either way. Your choice decides which view opens. ",
     "url": "/account/sign-in-and-profile/#sign-in",
     
     "relUrl": "/account/sign-in-and-profile/#sign-in"
-  },"163": {
+  },"165": {
     "doc": "Sign in and your profile",
     "title": "Create an account",
     "content": "On the sign-in page, click New to InverseAudit? Sign up and follow the steps. Confirm your email address with the link we send you before you sign in. If the email doesn’t arrive, click Didn’t get the confirmation email? Resend it. If you were invited by email, sign up with the address the invitation was sent to, so the audits shared with you are linked to your account. ",
     "url": "/account/sign-in-and-profile/#create-an-account",
     
     "relUrl": "/account/sign-in-and-profile/#create-an-account"
-  },"164": {
+  },"166": {
     "doc": "Sign in and your profile",
     "title": "Your profile",
     "content": "Click your name at the top right and choose Profile. You can also click your photo on the Home tab. | Profile - Your full name, credential, title, company name, phone number and photo. Your name and photo appear at the top of the Home tab. | Email - Change your email address. | Password - Change your password. | Personal data - Download or delete the personal data in your account. | . To sign out, click your name at the top right and choose Sign out. ",
     "url": "/account/sign-in-and-profile/#your-profile",
     
     "relUrl": "/account/sign-in-and-profile/#your-profile"
-  },"165": {
+  },"167": {
     "doc": "Sign in and your profile",
     "title": "If something goes wrong",
     "content": "I forgot my password On the sign-in page, click Forgot your password? and enter your email. Follow the link in the email to set a new password. I can't see the audits shared with me Sign in with I’m reviewing an audit report, using the email address the audit was shared with. See What clients see. ",
     "url": "/account/sign-in-and-profile/#if-something-goes-wrong",
     
     "relUrl": "/account/sign-in-and-profile/#if-something-goes-wrong"
-  },"166": {
+  },"168": {
     "doc": "Sign in and your profile",
     "title": "Related",
     "content": ". | Contacts and clients - Invite people to InverseAudit | What clients see | Contact support | . ",
     "url": "/account/sign-in-and-profile/#related",
     
     "relUrl": "/account/sign-in-and-profile/#related"
-  },"167": {
+  },"169": {
     "doc": "Subscribe a building",
     "title": "Subscribe a building",
     "content": "A subscription unlocks the energy audit and its reports for one building. For: Subscriber (the building's owner)Where: Home › Building setup › Subscription, then Billing and Plans . ",
     "url": "/account/subscribe/",
     
     "relUrl": "/account/subscribe/"
-  },"168": {
+  },"170": {
     "doc": "Subscribe a building",
     "title": "Steps",
     "content": ". | On Home, click the building’s card to select it, then open the Subscription tab in the Building setup panel. | Click Add to subscription list and confirm. | Open Billing and Plans in the left menu. Your buildings are listed under Buildings ready to subscribe. | Choose a plan. If you have a promo code, enter it under Promo code and click Apply. Then click Subscribe. | Enter your payment details, then click Start Free Trial (Professional plans) or Pay Now (All-In-One Plan). | . To take a building off the list, click Remove from subscription list on its Subscription tab. ",
     "url": "/account/subscribe/#steps",
     
     "relUrl": "/account/subscribe/#steps"
-  },"169": {
+  },"171": {
     "doc": "Subscribe a building",
     "title": "What you’ll see next",
     "content": "Professional plans start with a 3-day free trial. Once the building is subscribed, the Energy Auditing page no longer shows the Not subscribed banner, and you can run the energy audit. ",
     "url": "/account/subscribe/#what-youll-see-next",
     
     "relUrl": "/account/subscribe/#what-youll-see-next"
-  },"170": {
+  },"172": {
     "doc": "Subscribe a building",
     "title": "Invoices",
     "content": "Invoices are on the Invoice tab of Billing and Plans. Select an invoice under Billing history to view it, and click Download PDF to save it. ",
     "url": "/account/subscribe/#invoices",
     
     "relUrl": "/account/subscribe/#invoices"
-  },"171": {
+  },"173": {
     "doc": "Subscribe a building",
     "title": "If something goes wrong",
     "content": "My total is over $2,400 For security, a single payment must be under $2,400. Subscribe some of the buildings first and the rest separately. The Energy Auditing page says \"Not subscribed\" The building has no active subscription, so the energy audit and its reports are limited. Subscribe it with the steps above. ",
     "url": "/account/subscribe/#if-something-goes-wrong",
     
     "relUrl": "/account/subscribe/#if-something-goes-wrong"
-  },"172": {
+  },"174": {
     "doc": "Subscribe a building",
     "title": "Related",
     "content": ". | Cancel a subscription | Sign in and your profile | Account and billing - Compare the plans | . ",
     "url": "/account/subscribe/#related",
     
     "relUrl": "/account/subscribe/#related"
-  },"173": {
+  },"175": {
     "doc": "Systems",
     "title": "Systems",
     "content": "Describe the building’s HVAC and domestic hot water systems, and its schedules for monthly data. For: AnalyzerWhere: Home › Systems card . ",
     "url": "/baseline/systems/",
     
     "relUrl": "/baseline/systems/"
-  },"174": {
+  },"176": {
     "doc": "Systems",
     "title": "Steps",
     "content": ". | On Home, click the building’s Systems card. The window is named Systems, or Systems and schedules for monthly data. | On HVAC and hot water, describe the predominant system under Primary HVAC with Heating and cooling, Air distribution system, Zone terminal type, System configuration, Heating system and Hot water loop. If part of the building has a different system, describe it under Secondary HVAC. Then complete Chilled water plant and Domestic hot water. Options that don’t apply are grayed out automatically. | For monthly data, complete Lighting and HVAC schedules (required) and, if you can, Optional inputs. | Click Save changes. | . On a calibrated building, saving a change to the HVAC systems or schedules sends the building back to preparation. It leaves the Benchmarking and Energy Auditing lists until you check inputs and run the calibration again. A change to the domestic hot water system alone updates the model without a new calibration. ",
     "url": "/baseline/systems/#steps",
     
     "relUrl": "/baseline/systems/#steps"
-  },"175": {
+  },"177": {
     "doc": "Systems",
     "title": "What you’ll see next",
     "content": "The Systems card no longer shows Pending. When all four cards are done, check inputs and run the calibration. ",
     "url": "/baseline/systems/#what-youll-see-next",
     
     "relUrl": "/baseline/systems/#what-youll-see-next"
-  },"176": {
+  },"178": {
     "doc": "Systems",
     "title": "Related",
     "content": ". | Supported HVAC systems - Which system types are implemented and tested | Rates - The last data card | . ",
     "url": "/baseline/systems/#related",
     
     "relUrl": "/baseline/systems/#related"
-  },"177": {
+  },"179": {
     "doc": "What clients see",
     "title": "What clients see",
     "content": "Clients sign in to read the audits shared with them, plan the measures and send their bills. For: Clients and the analyzers who share with them . ",
     "url": "/share/what-clients-see/",
     
     "relUrl": "/share/what-clients-see/"
-  },"178": {
+  },"180": {
     "doc": "What clients see",
     "title": "Share an audit with a client",
     "content": ". | Add the client’s company on the Clients tab, and add the client as a contact at that company. See Contacts and clients. | Assign the building to that company with Client in the building information. | Invite the contact if they don’t have an account yet. | Post the audit. Only posted audits are visible to clients. | . If you Unpost the audit, clients can no longer see it. ",
     "url": "/share/what-clients-see/#share-an-audit-with-a-client",
     
     "relUrl": "/share/what-clients-see/#share-an-audit-with-a-client"
-  },"179": {
+  },"181": {
     "doc": "What clients see",
     "title": "For clients: reading a shared audit",
     "content": ". | Sign in from the InverseAudit sign-in page with I’m reviewing an audit report. Use the email address your energy consultant has for you. | The Home tab shows a card for each audit: the building, your energy consultant, the potential savings a year, the payback, the ENERGY STAR score now and after the measures (when the audit has one), the measured savings and the date the audit was last posted. Click a building to open its audit. | The audit has the same report tabs as your energy consultant’s: Summary, Analysis, Recommendations and Utility analysis. Once your energy consultant tracks the savings, Measured savings and Bills can appear too. | To ask about the audit, click Ask your energy consultant. To save a PDF, click Download PDF and choose Download full report. It is available while the building’s subscription is active. | . Your plan for the measures. Under Recommendations, mark each measure Not decided, Planned or Installed, with the month it was installed if you know it. Your plan is saved as you go. Your energy consultant sees it, and gets an email when you mark a measure installed. Bills. When your energy consultant tracks the savings, the Bills tab takes each year’s bills. Type the 12 months and click Send to your energy consultant, or Save for later to keep them without sending. You can also upload the bills as PDF, JPG or PNG files, up to 10 MB each; your energy consultant gets an email when you upload them. Home and Audits. The Audits tab lists every audit shared with you. Its switch puts an audit on your Home tab or takes it off, as Remove from Home on a card does. It changes only your own Home, not your colleagues’. ",
     "url": "/share/what-clients-see/#for-clients-reading-a-shared-audit",
     
     "relUrl": "/share/what-clients-see/#for-clients-reading-a-shared-audit"
-  },"180": {
+  },"182": {
     "doc": "What clients see",
     "title": "If something goes wrong",
     "content": "The client doesn't see the audit Check that the audit is posted, the building is assigned to the client’s company, and the client is a contact at that company with the email address they sign in with. Download PDF says the full report isn't available The building’s subscription has ended. Ask the subscriber to renew it. ",
     "url": "/share/what-clients-see/#if-something-goes-wrong",
     
     "relUrl": "/share/what-clients-see/#if-something-goes-wrong"
-  },"181": {
+  },"183": {
     "doc": "What clients see",
     "title": "Related",
     "content": ". | Reports and PDFs - What each report tab contains | . ",
     "url": "/share/what-clients-see/#related",
     
     "relUrl": "/share/what-clients-see/#related"
-  },"182": {
+  },"184": {
     "doc": "What InverseAudit does",
     "title": "What InverseAudit does",
     "content": "InverseAudit is an energy auditing platform for commercial buildings. It builds a calibrated energy model of your building from monthly or interval meter data, without the effort that manual modeling and calibration require. ",
     "url": "/start/what-inverseaudit-does/",
     
     "relUrl": "/start/what-inverseaudit-does/"
-  },"183": {
+  },"185": {
     "doc": "What InverseAudit does",
     "title": "The workflow",
     "content": "graph LR A[\"Add a building\"] --&gt; B[\"Enter data\"] B --&gt; C[\"Calibrate\"] C --&gt; D[\"Benchmark\"] D --&gt; E[\"Subscribe\"] E --&gt; F[\"Energy audit\"] F --&gt; G[\"Post the report\"] . | Add your building. | Enter its meter data, geometry, systems and rates. | Run the calibration. InverseAudit tunes the model until it matches your meter data. | Review the benchmark results. | Subscribe the building to unlock the energy audit. | In the energy audit, try energy conservation measures and see their savings and payback. | Post the report so your contacts and clients can see it. | . ",
     "url": "/start/what-inverseaudit-does/#the-workflow",
     
     "relUrl": "/start/what-inverseaudit-does/#the-workflow"
-  },"184": {
+  },"186": {
     "doc": "What InverseAudit does",
     "title": "Why a model should be calibrated",
     "content": "Energy modeling is not always accurate, especially for older existing buildings. A model’s accuracy is limited by the complexity of buildings. It also depends on operational factors such as schedules and occupancy, how systems and equipment are operated, plug loads and weather.1 A model that hasn’t been calibrated with utility data isn’t accurate, so it should be calibrated before energy cost savings are calculated. ",
     "url": "/start/what-inverseaudit-does/#why-a-model-should-be-calibrated",
     
     "relUrl": "/start/what-inverseaudit-does/#why-a-model-should-be-calibrated"
-  },"185": {
+  },"187": {
     "doc": "What InverseAudit does",
     "title": "Why use InverseAudit",
     "content": ". | It creates and calibrates a model based on your utility data and historical weather data. This leads to an accurate and representative model of your building. | Its analysis has the depth of an ASHRAE Level 2 energy audit: savings and costs for each measure, calculated with a calibrated model. | With the ASHRAE Level 1 or Level 2 report and a site visit by a qualified energy auditor, the report can meet ASHRAE Standard 211 for that level. | . InverseAudit can be used for: . | ASHRAE Standard 211 Level 2 energy audits, with a site visit by a qualified energy auditor | Energy audits for building-ordinance requirements (the audit report; filing happens outside InverseAudit) | LEED O+M: Existing Buildings | . ",
     "url": "/start/what-inverseaudit-does/#why-use-inverseaudit",
     
     "relUrl": "/start/what-inverseaudit-does/#why-use-inverseaudit"
-  },"186": {
+  },"188": {
     "doc": "What InverseAudit does",
     "title": "Methodologies and standards",
     "content": "InverseAudit incorporates industry standards such as: . | ASHRAE Standard 90.1 | ASHRAE Standard 211 | IPMVP (International Performance Measurement and Verification Protocol) | . It combines them with its own calibration methods. See How scores are calculated for the models behind the results. To try it, follow the Quick start with the Demo Building. | How Accurate is Energy Modeling in the Market. &#8617; . | . ",
     "url": "/start/what-inverseaudit-does/#methodologies-and-standards",
     
     "relUrl": "/start/what-inverseaudit-does/#methodologies-and-standards"
-  },"187": {
+  },"189": {
     "doc": "What you need",
     "title": "What you need",
     "content": "The information to have ready before you add your first building. ",
     "url": "/start/what-you-need/",
     
     "relUrl": "/start/what-you-need/"
-  },"188": {
+  },"190": {
     "doc": "What you need",
     "title": "General information",
     "content": ". | Occupancy type | Building area (GSF) | Building stories | Building address - Used to find your building’s footprint on the map and to pick the weather data. | Operating hours - Required only for monthly data. For example, Monday through Friday, 8 am to 5 pm, and the number of floors operating 24/7. | Parking area (optional) - Required only for the ENERGY STAR score. | . ",
     "url": "/start/what-you-need/#general-information",
     
     "relUrl": "/start/what-you-need/#general-information"
-  },"189": {
+  },"191": {
     "doc": "What you need",
     "title": "Meter data",
     "content": ". | Monthly data - 12 months of utility bills. | Interval data - 12 months (13 recommended) of 15-, 30- or 60-minute meter data, usually from a smart meter or a BEMS (Building Energy Management System). Interval data gives a more accurate model. | . See Supported data formats. ",
     "url": "/start/what-you-need/#meter-data",
     
     "relUrl": "/start/what-you-need/#meter-data"
-  },"190": {
+  },"192": {
     "doc": "What you need",
     "title": "Systems",
     "content": ". | Only high-level information about the HVAC and domestic hot water systems is required. For example, a rooftop unit with electric heat. | For monthly data, the building’s lighting and HVAC schedules are also required. | . ",
     "url": "/start/what-you-need/#systems",
     
     "relUrl": "/start/what-you-need/#systems"
-  },"191": {
+  },"193": {
     "doc": "What you need",
     "title": "Good to have",
     "content": ". | Your utility rates. Without them you can use an average rate, but demand cost savings and utility incentives aren’t calculated. | . No as-built architectural or mechanical drawings are required. ",
     "url": "/start/what-you-need/#good-to-have",
     
     "relUrl": "/start/what-you-need/#good-to-have"
-  },"192": {
+  },"194": {
     "doc": "What you need",
     "title": "Related",
     "content": ". | Quick start with the Demo Building - Try the whole workflow first | Add a building - Start with your own building | . ",
     "url": "/start/what-you-need/#related",
     
     "relUrl": "/start/what-you-need/#related"
-  },"193": {
+  },"195": {
     "doc": "What's new",
     "title": "What’s new",
     "content": "Recent changes to InverseAudit. ",
     "url": "/reference/whats-new/#whats-new",
     
     "relUrl": "/reference/whats-new/#whats-new"
-  },"194": {
+  },"196": {
     "doc": "What's new",
     "title": "November 2026",
-    "content": ". | ASHRAE Level 2 report. On Energy Auditing, choose Report: ASHRAE Level 2 to add the pages ASHRAE Standard 211 asks for a Level 2 audit, including a compliance form, the facility and its systems, an equipment inventory, calibration results and more about each measure. A qualified energy auditor completes them in the new Site visit tab, and the report stays a draft until they’re done. Report: ASHRAE Level 1 gives the Level 1 report, with only the entries Level 1 asks for. See The ASHRAE Level 1 and Level 2 reports. | One table for each set of figures. The Level 2 report no longer repeats the same figures in two tables: the Analysis section opens with the end uses of every fuel and the End-use breakdown (now with each end use’s peak kW), the cost table gives the material, labor and markup, the savings by measure leave the totals to the QA/QC check, and the Utility analysis is the historical energy use, with the EUI and costs by year only for buildings with several years. See What the report adds. | Each level’s own measure summary. The Level 2 report no longer has Level 1’s measure summary with Low, Medium and High bands: it has the standard’s Level 2 form with each measure’s figures, at the top of Recommendations, and each measure’s comfort and other non-energy impacts are next to its O&amp;M impact. See Measure text and priorities. | One measure table in every report PDF. The InverseAudit report’s Recommendations open with the same measure table as the Level 2 report, with each measure’s description, life, ROI and payback, low-cost and capital measures listed apart, and all measures together. The report PDFs no longer print the SIR; the Recommendations tab still shows it. See Reports and PDFs. | A shorter Level 1 report. The ASHRAE Level 1 report’s Analysis is the baseline’s energy use by end use, and its Recommendations are the measure summary, without InverseAudit’s measure-by-measure results, which are Level 2’s. See What Level 1 leaves out. | Bill costs in the ASHRAE reports. On the Historical energy use page, a bill without its cost on the meter data gets an estimate at the average rate (the year’s cost ÷ use at the building’s rates), in grey, instead of a blank and a $0 total. The interval data’s estimate and the Annual summary use the same rate. See What the report adds. | Standard 211 or not. When no program asks for ASHRAE Standard 211, untick This project must meet ASHRAE Standard 211 on the ASHRAE report’s Site visit tab (Compliance page). Every entry becomes optional, the report is never a draft, and it keeps its pages without naming the standard, claiming compliance or printing the compliance form. See If the project doesn’t need to meet Standard 211. | Report PDFs have one layout: every section’s tables have names on the left and numbers on the right, and the ASHRAE reports’ charts match the rest of the report. Natural gas is orange in every chart, the charts sit centred under their titles, and headings are in sentence case. The cover has no page header or footer, and its statement and signatures sit at the foot of the page. Each file’s name starts with the report type, such as ASHRAE Level 2. For the InverseAudit report, Download PDF also has Appendix B: Carbon impact of measures. See Reports and PDFs. | Report fixes. Charts in the report PDFs are always printed in full; on a busy server some used to print half-drawn or blank. Appendix A gives the building’s type, the energy data it covers and the calibration’s results, instead of fixed text. An ASHRAE report’s cover isn’t certified while the report is a draft. Report text written from older results, for example before new utility rates, is flagged on the Energy Audit page and when you post. See Calculate, update and post. | Benchmarking PDF. Download PDF on the Benchmarking page prints the Scores and End uses tabs with every table, chart and analysis. See Understand the benchmark. | The end-use score tables have a score shading key, on the page and in the PDF, and each fuel keeps its own color in the share of energy cost (electricity blue, natural gas orange). See Scenarios and the energy use gap. | The Typical Operation Scenario uses the schedules of the ASHRAE Standard 90.1-2007 User’s Manual for the building type, from the next calibration. See How scores are calculated. | When Benchmarking or Energy Auditing has no building to show, it says why (no building yet, none calibrated, or none pinned) and links to the next step on Home. | Rates from your bills. The AI bill import reads each bill’s total cost, and each rate becomes the bills’ average cost per unit. Check Inputs warns when a rate you entered is more than 25% off the bills. See Rates. | Natural gas. The calibration fits the year’s total gas use, so a month the utility skipped and billed with the next one does no harm: enter 0 for it. If your bills are actual meter readings, tick Bills are actual meter readings to compare each month instead. See Meter data. | Calibration. Hourly calibrations are scored on bias (NMBE) as well as CV(RMSE), as monthly ones are, and gas and fuel bills weigh at most 25% of the score. The search starts from the schedules and setpoints you entered. See Check inputs and run calibration. | Weather. The calibration uses the meter year’s measured solar radiation, cloud cover and station pressure along with temperatures, and typical-year runs use TMYx 2011-2025 weather from the nearest station (CWEC in Canada). Baselines that already have a TMY3 typical year keep it. | Time. Meter data, weather and charts are in the building’s local standard time. Interval files recorded in clock time (with daylight saving) are converted automatically, and the model applies daylight saving to its schedules. Recalibrate hourly baselines to use this. See Supported data formats. | Green Button import reads the file’s units correctly (a 15-minute Wh file used to come in far too large), subtracts solar export from delivered energy, and uses electricity readings only. | Fuel oil bills are counted in gallons, purchased steam bills now count in the calibration, and chilled water and steam meter data are used in hourly calibrations whenever they’re uploaded. | A billing year that starts on February 29 now covers the full year. | . ",
+    "content": ". | ASHRAE Level 2 report. On Energy Auditing, choose Report: ASHRAE Level 2 to add the pages ASHRAE Standard 211 asks for a Level 2 audit, including a compliance form, the facility and its systems, an equipment inventory, calibration results and more about each measure. A qualified energy auditor completes them in the new Site visit tab, and the report stays a draft until they’re done. Report: ASHRAE Level 1 gives the Level 1 report, with only the entries Level 1 asks for. See The ASHRAE Level 1 and Level 2 reports. | One table for each set of figures. The Level 2 report no longer repeats the same figures in two tables: the Analysis section opens with the end uses of every fuel and the End-use breakdown (now with each end use’s peak kW), the cost table gives the material, labor and markup, the savings by measure leave the totals to the QA/QC check, and the Utility analysis is the historical energy use, with the EUI and costs by year only for buildings with several years. See What the report adds. | Each level’s own measure summary. The Level 2 report no longer has Level 1’s measure summary with Low, Medium and High bands: it has the standard’s Level 2 form with each measure’s figures, at the top of Recommendations, and each measure’s comfort and other non-energy impacts are next to its O&amp;M impact. See Measure text and priorities. | One measure table in every report PDF. The InverseAudit report’s Recommendations open with the same measure table as the Level 2 report, with each measure’s description, life, ROI and payback, low-cost and capital measures listed apart, and all measures together. The report PDFs no longer print the SIR; the Recommendations tab still shows it. See Reports and PDFs. | A shorter Level 1 report. The ASHRAE Level 1 report’s Analysis is the baseline’s energy use by end use, and its Recommendations are the measure summary, without InverseAudit’s measure-by-measure results, which are Level 2’s. See What Level 1 leaves out. | Bill costs in the ASHRAE reports. On the Historical energy use page, a bill without its cost on the meter data gets an estimate at the average rate (the year’s cost ÷ use at the building’s rates), in grey, instead of a blank and a $0 total. The interval data’s estimate and the Annual summary use the same rate. See What the report adds. | Standard 211 or not. When no program asks for ASHRAE Standard 211, untick This project must meet ASHRAE Standard 211 on the ASHRAE report’s Site visit tab (Compliance page). Every entry becomes optional, the report is never a draft, and it keeps its pages without naming the standard, claiming compliance or printing the compliance form. See If the project doesn’t need to meet Standard 211. | Report PDFs have one layout: every section’s tables have names on the left and numbers on the right, and the ASHRAE reports’ charts match the rest of the report. Natural gas is orange in every chart, the charts sit centred under their titles, and headings are in sentence case. The cover has no page header or footer, and its statement and signatures sit at the foot of the page. Each file’s name starts with the report type, such as ASHRAE Level 2. For the InverseAudit report, Download PDF also has Appendix B: Carbon impact of measures. See Reports and PDFs. | Report fixes. Charts in the report PDFs are always printed in full; on a busy server some used to print half-drawn or blank. Appendix A gives the building’s type, the energy data it covers and the calibration’s results, instead of fixed text. An ASHRAE report’s cover isn’t certified while the report is a draft. Report text written from older results, for example before new utility rates, is flagged on the Energy Audit page and when you post. See Calculate, update and post. | Benchmarking PDF. Download PDF on the Benchmarking page prints the Scores and End uses tabs with every table, chart and analysis. See Understand the benchmark. | The end-use score tables have a score shading key, on the page and in the PDF, and each fuel keeps its own color in the share of energy cost (electricity blue, natural gas orange). See Scenarios and the energy use gap. | The Typical Operation Scenario uses the schedules of the ASHRAE Standard 90.1-2007 User’s Manual for the building type, from the next calibration. See How scores are calculated. | When Benchmarking or Energy Auditing has no building to show, it says why (no building yet, none calibrated, or none pinned) and links to the next step on Home. | Rates from your bills. The AI bill import reads each bill’s total cost, and each rate becomes the bills’ average cost per unit. Check Inputs warns when a rate you entered is more than 25% off the bills. See Rates. | Natural gas. The calibration fits the year’s total gas use, so a month the utility skipped and billed with the next one does no harm: enter 0 for it. If your bills are actual meter readings, tick Bills are actual meter readings to compare each month instead. See Meter data. | Calibration. Hourly calibrations are scored on bias (NMBE) as well as CV(RMSE), as monthly ones are, and gas and fuel bills weigh at most 25% of the score. The search starts from the schedules and setpoints you entered. See Check inputs and run calibration. | Weather. The calibration uses the meter year’s measured cloud cover and station pressure along with temperatures, with the typical year’s solar radiation, and typical-year runs use TMYx 2011-2025 weather from the nearest station (CWEC in Canada). Baselines that already have a TMY3 typical year keep it. | Time. Meter data, weather and charts are in the building’s local standard time. Interval files recorded in clock time (with daylight saving) are converted automatically, and the model applies daylight saving to its schedules. Recalibrate hourly baselines to use this. See Supported data formats. | Green Button import reads the file’s units correctly (a 15-minute Wh file used to come in far too large), subtracts solar export from delivered energy, and uses electricity readings only. | Fuel oil bills are counted in gallons, purchased steam bills now count in the calibration, and chilled water and steam meter data are used in hourly calibrations whenever they’re uploaded. | A billing year that starts on February 29 now covers the full year. | . ",
     "url": "/reference/whats-new/#november-2026",
     
     "relUrl": "/reference/whats-new/#november-2026"
-  },"195": {
+  },"197": {
     "doc": "What's new",
     "title": "October 2026",
     "content": ". | Benchmarking has two tabs, Scores and End uses, under one bar with the building and Run AI analysis, and each text says whether it is an AI analysis or the Standard text. See Understand the benchmark. | On Energy Auditing, the ECM Explorer is now the Measures panel, with one key for the colored dots, and the PDFs are under Download PDF at the top. See Run an energy audit and Reports and PDFs. | Tables have one Export menu (Copy, Print, Excel, PDF); Portfolio also has Columns. | Each person at a client company has their own Home tab. See What clients see. | End-Use Benchmarking now opens with the site EUI of the three compared scenarios and a new Energy Use Gap tab. See Scenarios and the energy use gap. | The Benchmark page shows the model fit as bars, with CV(RMSE) and NMBE against the ASHRAE Guideline 14 limits. See Read the calibration results. | The ENERGY STAR score uses the modeled floor area and is recalculated automatically when the model changes. See Scores. | Choose a calibration length: Quick, Standard or Thorough. See Check inputs and run calibration. | New accounts include a calibrated Demo Building to try the whole workflow. See Quick start with the Demo Building. | The Recommendations table shows the correct fuel oil, chilled water and steam savings for each measure. | Saving meter data without changes no longer sends a calibrated baseline back to preparation. | . ",
     "url": "/reference/whats-new/#october-2026",
     
     "relUrl": "/reference/whats-new/#october-2026"
-  },"196": {
+  },"198": {
     "doc": "What's new",
     "title": "Recently added",
     "content": ". | AI utility bill import fills in meter data from your bills and interval data files. See Meter data. | AI insights explain the benchmark results, and AI-suggested ECMs rate the measures. See AI insights and the Measures panel. | AI Analyze rewrites the audit report’s text. See Calculate, update and post. | The ECM Explorer has an Electrification tab for replacing fossil-fuel heating. See ECM parameters. | . ",
     "url": "/reference/whats-new/#recently-added",
     
     "relUrl": "/reference/whats-new/#recently-added"
-  },"197": {
+  },"199": {
     "doc": "What's new",
     "title": "January 2024",
     "content": ". | Monthly meter data is supported. | . ",
     "url": "/reference/whats-new/#january-2024",
     
     "relUrl": "/reference/whats-new/#january-2024"
-  },"198": {
+  },"200": {
     "doc": "What's new",
     "title": "What's new",
     "content": " ",
