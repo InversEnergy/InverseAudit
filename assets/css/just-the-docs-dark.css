@@ -8207,7 +8207,7 @@ code {
 }
 @media (min-width: 66rem) {
   .ia-flow {
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 .ia-flow a {
@@ -8220,20 +8220,23 @@ code {
   text-decoration: none;
   border-bottom: 1px solid #ececf0;
 }
+.ia-flow a:last-child {
+  border-bottom: 0;
+}
 @media (min-width: 66rem) {
   .ia-flow a {
     grid-template-columns: 1fr;
     align-content: start;
     padding: 0.85rem 0.7rem;
-    border-bottom: 0;
+    border-bottom: 1px solid #ececf0;
     border-right: 1px solid #ececf0;
   }
-  .ia-flow a:last-child {
+  .ia-flow a:nth-child(4n) {
     border-right: 0;
   }
-}
-.ia-flow a:last-child {
-  border-bottom: 0;
+  .ia-flow a:nth-last-child(-n+4) {
+    border-bottom: 0;
+  }
 }
 .ia-flow a:hover {
   background: #fbfbfd;
@@ -8267,6 +8270,9 @@ code {
 @media (min-width: 40rem) {
   .ia-cards {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .ia-cards > .ia-card:last-child:nth-child(odd) {
+    grid-column: 1/-1;
   }
 }
 
